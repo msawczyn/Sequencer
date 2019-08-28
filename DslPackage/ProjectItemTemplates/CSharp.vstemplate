@@ -1,2 +1,17 @@
-<!-- Placeholder for content that will be generated when the solution is built for the first time -->
-<VSTemplate xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"/>
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{4dc0771e-b3fb-407d-b3bf-b1078a324209}</TemplateID>
+		<Name Package="{f653928c-67e8-4bc5-a1e1-558ebc689013}" ID="103"/>
+		<Description Package="{f653928c-67e8-4bc5-a1e1-558ebc689013}" ID="102"/>
+		<Icon Package="{f653928c-67e8-4bc5-a1e1-558ebc689013}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>Sequencer.sqc</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.sqc">sqc.sqc</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.sqc.diagram">sqc.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

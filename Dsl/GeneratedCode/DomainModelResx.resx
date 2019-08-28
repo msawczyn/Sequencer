@@ -1,3 +1,787 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Placeholder for content that will be generated when the solution is built for the first time -->
-<root/>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Sawczyn.Sequencer.SequencerDomainModel.Description" xml:space="preserve">
+    <value>Sequence diagram representing a high level method call flow</value>
+    <comment>Description for DslLibrary &apos;Sequencer&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequencerDomainModel.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>DisplayName for DslLibrary &apos;Sequencer&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement.Description" xml:space="preserve">
+    <value>Overall base class that provides every element with a Name property which acts as its MonikerKey for serialization.</value>
+    <comment>Description for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement.DisplayName" xml:space="preserve">
+    <value>Named Element</value>
+    <comment>DisplayName for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement/Name.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.NamedElement.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement/Description.Description" xml:space="preserve">
+    <value>Summary comments</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.NamedElement/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagram.Description" xml:space="preserve">
+    <value>Root element in which others are embedded.</value>
+    <comment>Description for DomainClass &apos;SequenceDiagram&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagram.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>DisplayName for DomainClass &apos;SequenceDiagram&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.FlowElement.Description" xml:space="preserve">
+    <value>Elements that can be connected by Flow links.</value>
+    <comment>Description for DomainClass &apos;FlowElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.FlowElement.DisplayName" xml:space="preserve">
+    <value>Flow Element</value>
+    <comment>DisplayName for DomainClass &apos;FlowElement&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Method.Description" xml:space="preserve">
+    <value>Method (function) called in a class</value>
+    <comment>Description for DomainClass &apos;Method&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Method.DisplayName" xml:space="preserve">
+    <value>Method</value>
+    <comment>DisplayName for DomainClass &apos;Method&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Method/IsStatic.Description" xml:space="preserve">
+    <value>If true, this is a static method</value>
+    <comment>Description for DomainProperty &apos;IsStatic&apos; on DomainClass &apos;Method&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Method/IsStatic.DisplayName" xml:space="preserve">
+    <value>Static</value>
+    <comment>DisplayName for DomainProperty &apos;IsStatic&apos; on DomainClass &apos;Method&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.StartPoint.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;StartPoint&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.StartPoint.DisplayName" xml:space="preserve">
+    <value>Start Point</value>
+    <comment>DisplayName for DomainClass &apos;StartPoint&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.EndPoint.Description" xml:space="preserve">
+    <value>End of the documented sequence</value>
+    <comment>Description for DomainClass &apos;EndPoint&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.EndPoint.DisplayName" xml:space="preserve">
+    <value>End Point</value>
+    <comment>DisplayName for DomainClass &apos;EndPoint&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Branch.Description" xml:space="preserve">
+    <value>Condition branch</value>
+    <comment>Description for DomainClass &apos;Branch&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Branch.DisplayName" xml:space="preserve">
+    <value>Branch</value>
+    <comment>DisplayName for DomainClass &apos;Branch&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Branch/Condition.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.Branch.Condition</value>
+    <comment>Description for DomainProperty &apos;Condition&apos; on DomainClass &apos;Branch&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Branch/Condition.DisplayName" xml:space="preserve">
+    <value>Condition</value>
+    <comment>DisplayName for DomainProperty &apos;Condition&apos; on DomainClass &apos;Branch&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Synchronization.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;Synchronization&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Synchronization.DisplayName" xml:space="preserve">
+    <value>Synchronization</value>
+    <comment>DisplayName for DomainClass &apos;Synchronization&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Comment.Description" xml:space="preserve">
+    <value>Can be attached to any task flow element.</value>
+    <comment>Description for DomainClass &apos;Comment&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Comment.DisplayName" xml:space="preserve">
+    <value>Comment</value>
+    <comment>DisplayName for DomainClass &apos;Comment&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Comment/Text.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;Comment&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Comment/Text.DisplayName" xml:space="preserve">
+    <value>Text</value>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Comment&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Class.Description" xml:space="preserve">
+    <value>Represented by a swim lane on the diagram.</value>
+    <comment>Description for DomainClass &apos;Class&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Class.DisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>DisplayName for DomainClass &apos;Class&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.Flow</value>
+    <comment>Description for DomainClass &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow.DisplayName" xml:space="preserve">
+    <value>Flow</value>
+    <comment>DisplayName for DomainClass &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/Guard.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;Guard&apos; on DomainClass &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/Guard.DisplayName" xml:space="preserve">
+    <value>Guard</value>
+    <comment>DisplayName for DomainProperty &apos;Guard&apos; on DomainClass &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowFrom.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.Flow.FlowFrom</value>
+    <comment>Description for DomainRole &apos;FlowFrom&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowFrom.DisplayName" xml:space="preserve">
+    <value>Flow From</value>
+    <comment>DisplayName for DomainRole &apos;FlowFrom&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowFrom.PropertyDisplayName" xml:space="preserve">
+    <value>Flow To</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FlowFrom&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowTo.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.Flow.FlowTo</value>
+    <comment>Description for DomainRole &apos;FlowTo&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowTo.DisplayName" xml:space="preserve">
+    <value>Flow To</value>
+    <comment>DisplayName for DomainRole &apos;FlowTo&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Flow/FlowTo.PropertyDisplayName" xml:space="preserve">
+    <value>Flow From</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FlowTo&apos; on DomainRelationship &apos;Flow&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SequenceDiagramHasComments</value>
+    <comment>Description for DomainClass &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram Has Comments</value>
+    <comment>DisplayName for DomainClass &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagram</value>
+    <comment>Description for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>DisplayName for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.PropertyDisplayName" xml:space="preserve">
+    <value>Comments</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SequenceDiagramHasComments.Comment</value>
+    <comment>Description for DomainRole &apos;Comment&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.DisplayName" xml:space="preserve">
+    <value>Comment</value>
+    <comment>DisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.PropertyDisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;SequenceDiagramHasComments&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses.Description" xml:space="preserve">
+    <value>The set of classes (represented by swim lanes) in the task flow.</value>
+    <comment>Description for DomainClass &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram Has Classes</value>
+    <comment>DisplayName for DomainClass &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SequenceDiagramHasClasses.SequenceDiagram</value>
+    <comment>Description for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>DisplayName for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.PropertyDisplayName" xml:space="preserve">
+    <value>Classed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SequenceDiagram&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SequenceDiagramHasClasses.Class</value>
+    <comment>Description for DomainRole &apos;Class&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.DisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>DisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.PropertyDisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;SequenceDiagramHasClasses&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.CommentReferencesSubjects</value>
+    <comment>Description for DomainClass &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects.DisplayName" xml:space="preserve">
+    <value>Comment References Subjects</value>
+    <comment>DisplayName for DomainClass &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Comment.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.CommentReferencesSubjects.Comment</value>
+    <comment>Description for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Comment.DisplayName" xml:space="preserve">
+    <value>Comment</value>
+    <comment>DisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Comment.PropertyDisplayName" xml:space="preserve">
+    <value>Subjects</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Subject.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.CommentReferencesSubjects.Subject</value>
+    <comment>Description for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Subject.DisplayName" xml:space="preserve">
+    <value>Subject</value>
+    <comment>DisplayName for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentReferencesSubjects/Subject.PropertyDisplayName" xml:space="preserve">
+    <value>Comments</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.ClassHasFlowElements</value>
+    <comment>Description for DomainClass &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements.DisplayName" xml:space="preserve">
+    <value>Class Has Flow Elements</value>
+    <comment>DisplayName for DomainClass &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/Class.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.ClassHasFlowElements.Class</value>
+    <comment>Description for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/Class.DisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>DisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/Class.PropertyDisplayName" xml:space="preserve">
+    <value>Flow Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Class&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.ClassHasFlowElements.FlowElement</value>
+    <comment>Description for DomainRole &apos;FlowElement&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.DisplayName" xml:space="preserve">
+    <value>Flow Element</value>
+    <comment>DisplayName for DomainRole &apos;FlowElement&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.PropertyDisplayName" xml:space="preserve">
+    <value>Class</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FlowElement&apos; on DomainRelationship &apos;ClassHasFlowElements&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.TaskSort/Regular.DisplayName" xml:space="preserve">
+    <value>Regular</value>
+    <comment>Display name for EnumerationLiteral &apos;Regular&apos; on DomainEnumeration &apos;TaskSort&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.TaskSort/Regular.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.TaskSort.Regular</value>
+    <comment>Description for EnumerationLiteral &apos;Regular&apos; on DomainEnumeration &apos;TaskSort&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.TaskSort/SuperTask.DisplayName" xml:space="preserve">
+    <value>SuperTask</value>
+    <comment>Display name for EnumerationLiteral &apos;SuperTask&apos; on DomainEnumeration &apos;TaskSort&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.TaskSort/SuperTask.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.TaskSort.SuperTask</value>
+    <comment>Description for EnumerationLiteral &apos;SuperTask&apos; on DomainEnumeration &apos;TaskSort&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.MethodShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.MethodShape</value>
+    <comment>Description for DomainClass &apos;MethodShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.MethodShape.DisplayName" xml:space="preserve">
+    <value>Method Shape</value>
+    <comment>DisplayName for DomainClass &apos;MethodShape&apos;</comment>
+  </data>
+  <data name="MethodShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentBoxShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.CommentBoxShape</value>
+    <comment>Description for DomainClass &apos;CommentBoxShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentBoxShape.DisplayName" xml:space="preserve">
+    <value>Comment Box Shape</value>
+    <comment>DisplayName for DomainClass &apos;CommentBoxShape&apos;</comment>
+  </data>
+  <data name="CommentBoxShapeCommentDefaultText" xml:space="preserve">
+    <value>Comment</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.BranchShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.BranchShape</value>
+    <comment>Description for DomainClass &apos;BranchShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.BranchShape.DisplayName" xml:space="preserve">
+    <value>Branch Shape</value>
+    <comment>DisplayName for DomainClass &apos;BranchShape&apos;</comment>
+  </data>
+  <data name="BranchShapeConditionDefaultText" xml:space="preserve">
+    <value>Condition</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.EndShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.EndShape</value>
+    <comment>Description for DomainClass &apos;EndShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.EndShape.DisplayName" xml:space="preserve">
+    <value>End Shape</value>
+    <comment>DisplayName for DomainClass &apos;EndShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.StartShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.StartShape</value>
+    <comment>Description for DomainClass &apos;StartShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.StartShape.DisplayName" xml:space="preserve">
+    <value>Start Shape</value>
+    <comment>DisplayName for DomainClass &apos;StartShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SyncBarShape.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SyncBarShape</value>
+    <comment>Description for DomainClass &apos;SyncBarShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SyncBarShape.DisplayName" xml:space="preserve">
+    <value>Sync Bar Shape</value>
+    <comment>DisplayName for DomainClass &apos;SyncBarShape&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SwimLane.Description" xml:space="preserve">
+    <value>Description for Sawczyn.Sequencer.SwimLane</value>
+    <comment>Description for DomainClass &apos;SwimLane&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.SwimLane.DisplayName" xml:space="preserve">
+    <value>Swim Lane</value>
+    <comment>DisplayName for DomainClass &apos;SwimLane&apos;</comment>
+  </data>
+  <data name="SwimLaneClassNameDefaultText" xml:space="preserve">
+    <value>ClassName</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentConnector.Description" xml:space="preserve">
+    <value>Connects comments to their subject</value>
+    <comment>Description for DomainClass &apos;CommentConnector&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.CommentConnector.DisplayName" xml:space="preserve">
+    <value>Comment Connector</value>
+    <comment>DisplayName for DomainClass &apos;CommentConnector&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.FlowConnector.Description" xml:space="preserve">
+    <value>Connects activities</value>
+    <comment>Description for DomainClass &apos;FlowConnector&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.FlowConnector.DisplayName" xml:space="preserve">
+    <value>Flow Connector</value>
+    <comment>DisplayName for DomainClass &apos;FlowConnector&apos;</comment>
+  </data>
+  <data name="FormatList" xml:space="preserve">
+    <value>Sequence Diagram (*.sqc)|*.sqc</value>
+    <comment>A list of file format specifiers for the Save dialog box</comment>
+  </data>
+  <data name="ModelExplorerTitle" xml:space="preserve">
+    <value>Sequencer Explorer</value>
+    <comment>Model Explorer Toolwindow title</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Diagram.Description" xml:space="preserve">
+    <value>Sequende diagram</value>
+    <comment>Description for DomainClass &apos;Diagram&apos;</comment>
+  </data>
+  <data name="Sawczyn.Sequencer.Diagram.DisplayName" xml:space="preserve">
+    <value>Sequence Diagram</value>
+    <comment>DisplayName for DomainClass &apos;Diagram&apos;</comment>
+  </data>
+  <data name="SequencerToolboxTab" xml:space="preserve">
+    <value>Sequencer</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="MethodToolboxItem" xml:space="preserve">
+    <value>Method</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MethodToolboxTooltip" xml:space="preserve">
+    <value>Create a Method in a Class</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="StartPointToolboxItem" xml:space="preserve">
+    <value>Start Point</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="StartPointToolboxTooltip" xml:space="preserve">
+    <value>Create a Start Point</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EndPointToolboxItem" xml:space="preserve">
+    <value>End Point</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EndPointToolboxTooltip" xml:space="preserve">
+    <value>Create an End Point</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="BranchToolboxItem" xml:space="preserve">
+    <value>Branch</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="BranchToolboxTooltip" xml:space="preserve">
+    <value>Create a Branch</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SynchronizationToolboxItem" xml:space="preserve">
+    <value>Synchronization</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SynchronizationToolboxTooltip" xml:space="preserve">
+    <value>Create a Synchronization bar</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MethodCallToolboxItem" xml:space="preserve">
+    <value>Flow of Execution</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MethodCallToolboxTooltip" xml:space="preserve">
+    <value>Drag between Methods to create a Flow</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="CommentToolboxItem" xml:space="preserve">
+    <value>Comment</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="CommentToolboxTooltip" xml:space="preserve">
+    <value>Create a Comment</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="CommentConnectorToolboxItem" xml:space="preserve">
+    <value>Comment Connector</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="CommentConnectorToolboxTooltip" xml:space="preserve">
+    <value>Drag to link a Comment to its subjects</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ClassToolboxItem" xml:space="preserve">
+    <value>Class</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ClassToolboxTooltip" xml:space="preserve">
+    <value>Create a Class Swim Lane</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="UnresolvedToolboxItem" xml:space="preserve">
+    <value>ToolboxItem {0} was not found</value>
+    <comment>Invalid toolId</comment>
+  </data>
+  <data name="UnsupportedToolboxFormat" xml:space="preserve">
+    <value>Unsupported toolbox format: {0}</value>
+    <comment>Unsupported format Id</comment>
+  </data>
+  <data name="UnrecognizedElementType" xml:space="preserve">
+    <value>ElementType {0} is not recognized as a type of domain class which belongs to this domain model.</value>
+    <comment>Incorrect ElementType passed in to Model.CreateElement method</comment>
+  </data>
+  <data name="UnrecognizedElementLinkType" xml:space="preserve">
+    <value>ElementLinkType {0} is not recognized as a type of domain relationship which belongs to this domain model.</value>
+    <comment>Incorrect ElementLinkType passed in to Model.CreateElementLink method</comment>
+  </data>
+  <data name="AmbiguousSchema" xml:space="preserve">
+    <value>More than one schema found for target namespace &apos;{0}&apos;, use the first one at &apos;{1}&apos;.</value>
+    <comment>Serialization Warning: AmbiguousSchema</comment>
+  </data>
+  <data name="ExpectingFullFormRelationship" xml:space="preserve">
+    <value>Element &apos;{0}&apos; is treated as the target role-player of a relationship &apos;{1}&apos; instance, which should be serialized in full-form.</value>
+    <comment>Serialization Warning: ExpectingFullFormRelationship</comment>
+  </data>
+  <data name="ExpectingShortFormRelationship" xml:space="preserve">
+    <value>Instances of relationship &apos;{0}&apos; should be serialized in short-form.</value>
+    <comment>Serialization Warning: ExpectingShortFormRelationship</comment>
+  </data>
+  <data name="IgnoredPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;, ignored.</value>
+    <comment>Serialization Warning: IgnoredPropertyValue</comment>
+  </data>
+  <data name="MissingId" xml:space="preserve">
+    <value>Missing &apos;Id&apos; attribute, a new Guid &apos;{0}&apos; is auto-generated.</value>
+    <comment>Serialization Warning: MissingId</comment>
+  </data>
+  <data name="MonikerResolvedToDuplicateLink" xml:space="preserve">
+    <value>Resolving moniker &apos;{0}&apos; causes a duplicate link to be created, so the link and the moniker are ignored.</value>
+    <comment>Serialization Warning: MonikerResolvedToDuplicateLink</comment>
+  </data>
+  <data name="NoSchema" xml:space="preserve">
+    <value>Cannot find a schema that defines target namespace &apos;{0}&apos;, schema validation skipped.</value>
+    <comment>Serialization Warning: NoSchema</comment>
+  </data>
+  <data name="UnexpectedXmlElement" xml:space="preserve">
+    <value>Unexpected XML element &apos;{0}&apos;, ignored.</value>
+    <comment>Serialization Warning: UnexpectedXmlElement</comment>
+  </data>
+  <data name="AmbiguousMoniker" xml:space="preserve">
+    <value>Ambiguous moniker &apos;{0}&apos; encountered. It is used for both &apos;{1}&apos; and &apos;{2}&apos;.</value>
+    <comment>Serialization Error: AmbiguousMoniker</comment>
+  </data>
+  <data name="CannotMonikerizeElement" xml:space="preserve">
+    <value>Instances of DomainClass &apos;{0}&apos; cannot be serialized as a moniker.
+A DomainClass can be serialized as a moniker only if 
+1) it has a defined/inherited DomainProperty marked as IsMonikerKey=true, or 
+2) it is marked/inherited with SerializeId=true.</value>
+    <comment>Serialization Error: CannotMonikerizeElement</comment>
+  </data>
+  <data name="CannotOpenDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotOpenDocument</comment>
+  </data>
+  <data name="CannotSaveDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotSaveDocument</comment>
+  </data>
+  <data name="DanglingRelationship" xml:space="preserve">
+    <value>Relationship &apos;{0}&apos; instance is missing target role-player.</value>
+    <comment>Serialization Error: DanglingRelationship</comment>
+  </data>
+  <data name="InvalidPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;.</value>
+    <comment>Serialization Error: InvalidPropertyValue</comment>
+  </data>
+  <data name="MissingMoniker" xml:space="preserve">
+    <value>Missing moniker. A moniker is expected in attribute &apos;{0}&apos;.</value>
+    <comment>Serialization Error: MissingMoniker</comment>
+  </data>
+  <data name="MissingTransaction" xml:space="preserve">
+    <value>This must be called within the context of an active transaction.</value>
+    <comment>Serialization Error: MissingTransaction</comment>
+  </data>
+  <data name="UnresolvedMoniker" xml:space="preserve">
+    <value>Cannot resolve moniker &apos;{0}&apos;.</value>
+    <comment>Serialization Error: UnresolvedMoniker</comment>
+  </data>
+  <data name="VersionMismatch" xml:space="preserve">
+    <value>Unsupported version &apos;{0}&apos;, can only support &apos;{1}&apos;.</value>
+    <comment>Serialization Error: VersionMismatch</comment>
+  </data>
+  <data name="CannotCloseExistingDiagramDocument" xml:space="preserve">
+    <value>Diagram file &apos;{0}&apos; cannot be closed.</value>
+    <comment>User cancel closing diagram file. Hence, the DSL model file cannot be opened</comment>
+  </data>
+  <data name="BindingErrorOccurred" xml:space="preserve">
+    <value>Extensions for this designer may not be found as a MEF binding error has occurred. The error that occurred was:
+{0}</value>
+    <comment>MEF binding error occurred - exception message being logged in the error window so the user is aware.</comment>
+  </data>
+  <data name="InvalidSaveRootElementType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid root element type.</value>
+    <comment>Exception message used if an invalid root element type is passed to IDomainModelSerializer.SaveModel / SaveModelAndDiagram</comment>
+  </data>
+  <data name="InvalidSaveDiagramType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid diagram type.</value>
+    <comment>Exception message used if an invalid diagram type is passed to IDomainModelSerializer.SaveModelAndDiagram</comment>
+  </data>
+  <data name="MinimumMultiplicityMissingLink" xml:space="preserve">
+    <value>{0} {1} has no {2}.</value>
+    <comment>Multiplicity underflow validation.</comment>
+  </data>
+  <data name="SaveOperationCancelled" xml:space="preserve">
+    <value>Save operation cancelled.</value>
+    <comment>Message when save is cancelled on validation errors</comment>
+  </data>
+  <data name="SaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors, continue save?</value>
+    <comment>Message when validation errors are found on save</comment>
+  </data>
+  <data name="UnloadableSaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
+    <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BranchShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\decision.emf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>BranchShape shape image</comment>
+  </data>
+  <data name="EndShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Stop.emf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>EndShape shape image</comment>
+  </data>
+  <data name="StartShapeImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\Start.emf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>StartShape shape image</comment>
+  </data>
+  <data name="MethodToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\TaskTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="StartPointToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\StartTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EndPointToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\EndTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="BranchToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\MergeBranchTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SynchronizationToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\SyncBarTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MethodCallToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\FlowTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="CommentToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\CommentTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="CommentConnectorToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\CommentConnectorTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ClassToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\SwimlaneTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+</root>
+
+
