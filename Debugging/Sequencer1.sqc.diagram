@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sequencerDiagram dslVersion="1.0.0.0" Id="a3935aa2-a0aa-484a-8e8d-ea72ef4ea4c0" absoluteBounds="0, 0, 11, 8.5" name="Sequencer1" fillColor="White">
+  <sequenceDiagramMoniker Id="f143e689-9598-4917-8cc8-297e2a8f50ee" />
+  <nestedChildShapes>
+    <swimLane Id="bca2644b-bd7c-4b15-8433-44a50a8a1f35" absoluteBounds="0, 0, 2.375, 8.5">
+      <classMoniker Id="f3924b7b-8747-4d0d-a66f-06a9cb61a0f1" />
+      <nestedChildShapes>
+        <startShape Id="d127f46d-f1c9-44f2-8af3-81d21184baf6" absoluteBounds="1, 1.5, 0.25, 0.25">
+          <startPointMoniker Id="ceea955c-497f-4795-9c14-9155a122f8c6" />
+        </startShape>
+        <endShape Id="d3873751-47eb-4ee0-abc5-9e176697410e" absoluteBounds="1.375, 5.75, 0.25, 0.25">
+          <endPointMoniker Id="3f76a120-20b1-4f39-9232-5ff024fa3668" />
+        </endShape>
+        <methodShape Id="460ea0f1-6384-4476-a567-3b63c5afe95f" absoluteBounds="0.5, 2.25, 1.25, 0.375" fillColor="192, 255, 192">
+          <methodMoniker Id="af5b9e81-1ccf-4813-8884-e6b1c9fcdd73" />
+        </methodShape>
+        <methodShape Id="f940cdec-53da-4d03-a89c-3d7e6e0d6085" absoluteBounds="0.5, 3, 1.25, 0.375" fillColor="213, 231, 205">
+          <methodMoniker Id="dca0e286-fecf-4e69-913b-299b1fd93aa0" />
+        </methodShape>
+      </nestedChildShapes>
+    </swimLane>
+    <swimLane Id="019c4ee6-bab5-4bb9-94db-a390d2ff9efd" absoluteBounds="2.375, 0, 1.895833333333333, 8.5">
+      <classMoniker Id="0fa59ff8-43e8-4b81-bd63-fdecf382f11e" />
+      <nestedChildShapes>
+        <methodShape Id="41f90e48-d2a2-4d7b-a226-ee890be7ad4b" absoluteBounds="2.625, 2.25, 1.25, 0.375" fillColor="213, 231, 205">
+          <methodMoniker Id="6c1fdc3a-e30f-41f4-a452-ecd0d995514d" />
+        </methodShape>
+      </nestedChildShapes>
+    </swimLane>
+    <swimLane Id="0d8dbcd3-3531-4ea7-889e-6a0a1f7b196e" absoluteBounds="4.270833333333333, 0, 6.729166666666667, 8.5">
+      <classMoniker Id="a092c1af-2bb6-44ac-9026-bcc56ea51145" />
+      <nestedChildShapes>
+        <methodShape Id="874ff5ba-88df-447f-be7a-ade16fd33089" absoluteBounds="4.770833333333333, 2.125, 1.25, 0.375" fillColor="213, 231, 205">
+          <methodMoniker Id="33a5a6f2-03ef-40f4-a186-8f071af81fd3" />
+        </methodShape>
+      </nestedChildShapes>
+    </swimLane>
+  </nestedChildShapes>
+</sequencerDiagram>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sequenceDiagram xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f143e689-9598-4917-8cc8-297e2a8f50ee" xmlns="http://schemas.microsoft.com/dsltools/Sequencer">
+  <classed>
+    <class Id="f3924b7b-8747-4d0d-a66f-06a9cb61a0f1" name="Class1">
+      <flowElements>
+        <startPoint Id="ceea955c-497f-4795-9c14-9155a122f8c6" />
+        <endPoint Id="3f76a120-20b1-4f39-9232-5ff024fa3668" />
+        <method Id="af5b9e81-1ccf-4813-8884-e6b1c9fcdd73" name="Method1" isStatic="false" />
+        <method Id="dca0e286-fecf-4e69-913b-299b1fd93aa0" name="Method2" isStatic="false" />
+      </flowElements>
+    </class>
+    <class Id="0fa59ff8-43e8-4b81-bd63-fdecf382f11e" name="Class2">
+      <flowElements>
+        <method Id="6c1fdc3a-e30f-41f4-a452-ecd0d995514d" name="Method1" isStatic="false" />
+      </flowElements>
+    </class>
+    <class Id="a092c1af-2bb6-44ac-9026-bcc56ea51145" name="Class3">
+      <flowElements>
+        <method Id="33a5a6f2-03ef-40f4-a186-8f071af81fd3" name="Method1" isStatic="false" />
+      </flowElements>
+    </class>
+  </classed>
+</sequenceDiagram>

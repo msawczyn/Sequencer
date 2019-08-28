@@ -12,322 +12,15 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace Sawczyn.Sequencer
 {
 	/// <summary>
-	/// DomainRelationship Flow
-	/// Description for Sawczyn.Sequencer.Flow
-	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Flow.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Flow.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship()]
-	[DslModeling::DomainObjectId("91cec0b4-ef09-4861-8bc9-2003ada86286")]
-	public partial class Flow : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// Flow domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x91cec0b4, 0xef09, 0x4861, 0x8b, 0xc9, 0x20, 0x03, 0xad, 0xa8, 0x62, 0x86);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a Flow link in the same Partition as the given FlowElement
-		/// </summary>
-		/// <param name="source">FlowElement to use as the source of the relationship.</param>
-		/// <param name="target">FlowElement to use as the target of the relationship.</param>
-		public Flow(FlowElement source, FlowElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(Flow.FlowFromDomainRoleId, source), new DslModeling::RoleAssignment(Flow.FlowToDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public Flow(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public Flow(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public Flow(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public Flow(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region FlowFrom domain role code
-		
-		/// <summary>
-		/// FlowFrom domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid FlowFromDomainRoleId = new global::System.Guid(0x47639d7f, 0x33f5, 0x40d2, 0xad, 0xa9, 0x8a, 0x62, 0xfb, 0x3c, 0x0a, 0x59);
-		
-		/// <summary>
-		/// DomainRole FlowFrom
-		/// Description for Sawczyn.Sequencer.Flow.FlowFrom
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Flow/FlowFrom.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Flow/FlowFrom.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "FlowTo", PropertyDisplayNameKey="Sawczyn.Sequencer.Flow/FlowFrom.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("47639d7f-33f5-40d2-ada9-8a62fb3c0a59")]
-		public virtual FlowElement FlowFrom
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (FlowElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, FlowFromDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, FlowFromDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access FlowFrom of a FlowElement
-		/// <summary>
-		/// Gets a list of FlowFrom.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FlowElement> GetFlowFrom(FlowElement element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(element, FlowToDomainRoleId);
-		}
-		#endregion
-		#region FlowTo domain role code
-		
-		/// <summary>
-		/// FlowTo domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid FlowToDomainRoleId = new global::System.Guid(0x1ca64ed3, 0xf939, 0x4ab4, 0xba, 0xa5, 0x0f, 0x58, 0x8c, 0xec, 0xca, 0x4a);
-		
-		/// <summary>
-		/// DomainRole FlowTo
-		/// Description for Sawczyn.Sequencer.Flow.FlowTo
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Flow/FlowTo.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Flow/FlowTo.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "FlowFrom", PropertyDisplayNameKey="Sawczyn.Sequencer.Flow/FlowTo.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("1ca64ed3-f939-4ab4-baa5-0f588cecca4a")]
-		public virtual FlowElement FlowTo
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (FlowElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, FlowToDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, FlowToDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access FlowTo of a FlowElement
-		/// <summary>
-		/// Gets a list of FlowTo.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FlowElement> GetFlowTo(FlowElement element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(element, FlowFromDomainRoleId);
-		}
-		#endregion
-		#region Guard domain property code
-		
-		/// <summary>
-		/// Guard domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid GuardDomainPropertyId = new global::System.Guid(0x52e92455, 0xaddc, 0x422e, 0xa4, 0x3f, 0x9a, 0xd8, 0xcc, 0x48, 0xd1, 0x3c);
-		
-		/// <summary>
-		/// Storage for Guard
-		/// </summary>
-		private global::System.String guardPropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Guard domain property.
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Flow/Guard.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Flow/Guard.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue("")]
-		[DslModeling::DomainObjectId("52e92455-addc-422e-a43f-9ad8cc48d13c")]
-		public global::System.String Guard
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return guardPropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				GuardPropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the Flow.Guard domain property.
-		/// </summary>
-		internal sealed partial class GuardPropertyHandler : DslModeling::DomainPropertyValueHandler<Flow, global::System.String>
-		{
-			private GuardPropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the Flow.Guard domain property value handler.
-			/// </summary>
-			public static readonly GuardPropertyHandler Instance = new GuardPropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the Flow.Guard domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return GuardDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(Flow element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.guardPropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(Flow element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.guardPropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region FlowFrom link accessor
-		/// <summary>
-		/// Get the list of Flow links to a FlowElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.Flow> GetLinksToFlowTo ( global::Sawczyn.Sequencer.FlowElement flowFromInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.Flow>(flowFromInstance, global::Sawczyn.Sequencer.Flow.FlowFromDomainRoleId);
-		}
-		#endregion
-		#region FlowTo link accessor
-		/// <summary>
-		/// Get the list of Flow links to a FlowElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.Flow> GetLinksToFlowFrom ( global::Sawczyn.Sequencer.FlowElement flowToInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.Flow>(flowToInstance, global::Sawczyn.Sequencer.Flow.FlowToDomainRoleId);
-		}
-		#endregion
-		#region Flow instance accessors
-		
-		/// <summary>
-		/// Get any Flow links between a given FlowElement and a FlowElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.Flow> GetLinks( global::Sawczyn.Sequencer.FlowElement source, global::Sawczyn.Sequencer.FlowElement target )
-		{
-			global::System.Collections.Generic.List<global::Sawczyn.Sequencer.Flow> outLinks = new global::System.Collections.Generic.List<global::Sawczyn.Sequencer.Flow>();
-			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.Flow> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.Flow>(source, global::Sawczyn.Sequencer.Flow.FlowFromDomainRoleId);
-			foreach ( global::Sawczyn.Sequencer.Flow link in links )
-			{
-				if ( target.Equals(link.FlowTo) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one Flow link between a given FlowElementand a FlowElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Sawczyn.Sequencer.Flow GetLink( global::Sawczyn.Sequencer.FlowElement source, global::Sawczyn.Sequencer.FlowElement target )
-		{
-			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.Flow> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.Flow>(source, global::Sawczyn.Sequencer.Flow.FlowFromDomainRoleId);
-			foreach ( global::Sawczyn.Sequencer.Flow link in links )
-			{
-				if ( target.Equals(link.FlowTo) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Sawczyn.Sequencer
-{
-	/// <summary>
 	/// DomainRelationship SequenceDiagramHasComments
 	/// Description for Sawczyn.Sequencer.SequenceDiagramHasComments
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("f93c2a7b-4f8d-453d-b7a8-d9d926b2f818")]
+	[DslModeling::DomainObjectId("8cba5f0d-4e66-4534-9dcd-9bd3e105cbde")]
 	public partial class SequenceDiagramHasComments : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
@@ -335,7 +28,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SequenceDiagramHasComments domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf93c2a7b, 0x4f8d, 0x453d, 0xb7, 0xa8, 0xd9, 0xd9, 0x26, 0xb2, 0xf8, 0x18);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8cba5f0d, 0x4e66, 0x4534, 0x9d, 0xcd, 0x9b, 0xd3, 0xe1, 0x05, 0xcb, 0xde);
 	
 				
 		/// <summary>
@@ -396,16 +89,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SequenceDiagram domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid SequenceDiagramDomainRoleId = new global::System.Guid(0x9a22e614, 0x8060, 0x4283, 0x9c, 0xd9, 0x00, 0x87, 0xf0, 0x18, 0x59, 0x6b);
+		public static readonly global::System.Guid SequenceDiagramDomainRoleId = new global::System.Guid(0x5219c5b0, 0xdeb4, 0x4763, 0xa1, 0xb6, 0x95, 0xfe, 0xc7, 0xdc, 0x2a, 0x45);
 		
 		/// <summary>
 		/// DomainRole SequenceDiagram
 		/// Description for Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagram
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Comments", PropertyDisplayNameKey="Sawczyn.Sequencer.SequenceDiagramHasComments/SequenceDiagram.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("9a22e614-8060-4283-9cd9-0087f018596b")]
+		[DslModeling::DomainObjectId("5219c5b0-deb4-4763-a1b6-95fec7dc2a45")]
 		public virtual SequenceDiagram SequenceDiagram
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -447,16 +140,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Comment domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid CommentDomainRoleId = new global::System.Guid(0x11eb6d29, 0xe992, 0x432e, 0x8b, 0x9e, 0x60, 0xf4, 0x05, 0xc7, 0x30, 0xc2);
+		public static readonly global::System.Guid CommentDomainRoleId = new global::System.Guid(0x4b7b34bf, 0x25ae, 0x4b9e, 0x91, 0xab, 0x54, 0x08, 0xc6, 0xbf, 0xa7, 0x22);
 		
 		/// <summary>
 		/// DomainRole Comment
 		/// Description for Sawczyn.Sequencer.SequenceDiagramHasComments.Comment
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "SequenceDiagram", PropertyDisplayNameKey="Sawczyn.Sequencer.SequenceDiagramHasComments/Comment.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("11eb6d29-e992-432e-8b9e-60f405c730c2")]
+		[DslModeling::DomainObjectId("4b7b34bf-25ae-4b9e-91ab-5408c6bfa722")]
 		public virtual Comment Comment
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -559,14 +252,14 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainRelationship SequenceDiagramHasClasses
-	/// The set of classes (represented by swim lanes) in the task flow.
+	/// The set of actors (represented by swim lanes) in the task flow.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("409cad13-4f15-4c9c-a829-824f1387f071")]
+	[DslModeling::DomainObjectId("626eb8cd-b00c-4c89-ab96-432d2571a1e2")]
 	public partial class SequenceDiagramHasClasses : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
@@ -574,7 +267,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SequenceDiagramHasClasses domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x409cad13, 0x4f15, 0x4c9c, 0xa8, 0x29, 0x82, 0x4f, 0x13, 0x87, 0xf0, 0x71);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x626eb8cd, 0xb00c, 0x4c89, 0xab, 0x96, 0x43, 0x2d, 0x25, 0x71, 0xa1, 0xe2);
 	
 				
 		/// <summary>
@@ -635,16 +328,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SequenceDiagram domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid SequenceDiagramDomainRoleId = new global::System.Guid(0xb948d22b, 0x8abe, 0x466d, 0x8f, 0xca, 0x03, 0x66, 0x4c, 0xf3, 0xcf, 0x6b);
+		public static readonly global::System.Guid SequenceDiagramDomainRoleId = new global::System.Guid(0x8d49b1ce, 0x87b9, 0x4b80, 0xba, 0xda, 0x57, 0x52, 0xf2, 0x78, 0x42, 0x88);
 		
 		/// <summary>
 		/// DomainRole SequenceDiagram
 		/// Description for Sawczyn.Sequencer.SequenceDiagramHasClasses.SequenceDiagram
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Classed", PropertyDisplayNameKey="Sawczyn.Sequencer.SequenceDiagramHasClasses/SequenceDiagram.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("b948d22b-8abe-466d-8fca-03664cf3cf6b")]
+		[DslModeling::DomainObjectId("8d49b1ce-87b9-4b80-bada-5752f2784288")]
 		public virtual SequenceDiagram SequenceDiagram
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -686,16 +379,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Class domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ClassDomainRoleId = new global::System.Guid(0x95ae747b, 0x7038, 0x49e8, 0x87, 0x09, 0xce, 0xaf, 0x3a, 0xe0, 0x18, 0x65);
+		public static readonly global::System.Guid ClassDomainRoleId = new global::System.Guid(0x6d8c679d, 0xfdba, 0x4c92, 0xa4, 0x8b, 0x00, 0x65, 0xf3, 0x4d, 0x1e, 0xb9);
 		
 		/// <summary>
 		/// DomainRole Class
 		/// Description for Sawczyn.Sequencer.SequenceDiagramHasClasses.Class
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "SequenceDiagram", PropertyDisplayNameKey="Sawczyn.Sequencer.SequenceDiagramHasClasses/Class.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("95ae747b-7038-49e8-8709-ceaf3ae01865")]
+		[DslModeling::DomainObjectId("6d8c679d-fdba-4c92-a48b-0065f34d1eb9")]
 		public virtual Class Class
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -800,12 +493,12 @@ namespace Sawczyn.Sequencer
 	/// DomainRelationship CommentReferencesSubjects
 	/// Description for Sawczyn.Sequencer.CommentReferencesSubjects
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
-	[DslModeling::DomainObjectId("23aa51a6-029f-465b-a4fd-23b480099b84")]
+	[DslModeling::DomainObjectId("f842afde-b5cf-4ac3-85be-694d355f478b")]
 	public partial class CommentReferencesSubjects : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
@@ -813,7 +506,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// CommentReferencesSubjects domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x23aa51a6, 0x029f, 0x465b, 0xa4, 0xfd, 0x23, 0xb4, 0x80, 0x09, 0x9b, 0x84);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf842afde, 0xb5cf, 0x4ac3, 0x85, 0xbe, 0x69, 0x4d, 0x35, 0x5f, 0x47, 0x8b);
 	
 				
 		/// <summary>
@@ -874,16 +567,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Comment domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid CommentDomainRoleId = new global::System.Guid(0x44310148, 0x7dfc, 0x4b30, 0x97, 0x32, 0x23, 0x88, 0x06, 0x43, 0xa5, 0x57);
+		public static readonly global::System.Guid CommentDomainRoleId = new global::System.Guid(0xd9e024bd, 0xb80a, 0x4f73, 0x8d, 0xc1, 0x68, 0x64, 0xc9, 0x79, 0x2e, 0xef);
 		
 		/// <summary>
 		/// DomainRole Comment
 		/// Description for Sawczyn.Sequencer.CommentReferencesSubjects.Comment
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects/Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects/Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects/Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects/Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Subjects", PropertyDisplayNameKey="Sawczyn.Sequencer.CommentReferencesSubjects/Comment.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("44310148-7dfc-4b30-9732-23880643a557")]
+		[DslModeling::DomainObjectId("d9e024bd-b80a-4f73-8dc1-6864c9792eef")]
 		public virtual Comment Comment
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -915,16 +608,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Subject domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid SubjectDomainRoleId = new global::System.Guid(0xc58292b0, 0xc9eb, 0x4b29, 0x83, 0x66, 0x47, 0xa1, 0x48, 0x9c, 0x35, 0x02);
+		public static readonly global::System.Guid SubjectDomainRoleId = new global::System.Guid(0x2198b1d4, 0x8277, 0x4044, 0xb9, 0x69, 0xba, 0x12, 0xa8, 0xba, 0x10, 0x87);
 		
 		/// <summary>
 		/// DomainRole Subject
 		/// Description for Sawczyn.Sequencer.CommentReferencesSubjects.Subject
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects/Subject.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects/Subject.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentReferencesSubjects/Subject.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentReferencesSubjects/Subject.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Comments", PropertyDisplayNameKey="Sawczyn.Sequencer.CommentReferencesSubjects/Subject.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("c58292b0-c9eb-4b29-8366-47a1489c3502")]
+		[DslModeling::DomainObjectId("2198b1d4-8277-4044-b969-ba12a8ba1087")]
 		public virtual FlowElement Subject
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -1020,12 +713,12 @@ namespace Sawczyn.Sequencer
 	/// DomainRelationship ClassHasFlowElements
 	/// Description for Sawczyn.Sequencer.ClassHasFlowElements
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("b999641e-8fce-41ef-9de2-5cc3a76b70e1")]
+	[DslModeling::DomainObjectId("2e49c774-a5ec-4c49-83d6-af0804062e68")]
 	public partial class ClassHasFlowElements : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
@@ -1033,7 +726,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// ClassHasFlowElements domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb999641e, 0x8fce, 0x41ef, 0x9d, 0xe2, 0x5c, 0xc3, 0xa7, 0x6b, 0x70, 0xe1);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2e49c774, 0xa5ec, 0x4c49, 0x83, 0xd6, 0xaf, 0x08, 0x04, 0x06, 0x2e, 0x68);
 	
 				
 		/// <summary>
@@ -1094,16 +787,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Class domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ClassDomainRoleId = new global::System.Guid(0xfc37ca9a, 0x2144, 0x4510, 0x96, 0xa8, 0xf6, 0xec, 0x85, 0xa8, 0xb1, 0x0a);
+		public static readonly global::System.Guid ClassDomainRoleId = new global::System.Guid(0x32a862d2, 0xbe4d, 0x4deb, 0xbd, 0x43, 0x57, 0xe4, 0x8f, 0x8f, 0x46, 0xf3);
 		
 		/// <summary>
 		/// DomainRole Class
 		/// Description for Sawczyn.Sequencer.ClassHasFlowElements.Class
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements/Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements/Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements/Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements/Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "FlowElements", PropertyDisplayNameKey="Sawczyn.Sequencer.ClassHasFlowElements/Class.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("fc37ca9a-2144-4510-96a8-f6ec85a8b10a")]
+		[DslModeling::DomainObjectId("32a862d2-be4d-4deb-bd43-57e48f8f46f3")]
 		public virtual Class Class
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -1145,16 +838,16 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// FlowElement domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid FlowElementDomainRoleId = new global::System.Guid(0xd4a9c985, 0x41e9, 0x4151, 0x9e, 0x20, 0xc8, 0xd0, 0x3c, 0x96, 0x26, 0xc5);
+		public static readonly global::System.Guid FlowElementDomainRoleId = new global::System.Guid(0x66ed7de4, 0x90a7, 0x42e8, 0x96, 0x05, 0x8d, 0xb3, 0x88, 0xd2, 0x8a, 0xb3);
 		
 		/// <summary>
 		/// DomainRole FlowElement
 		/// Description for Sawczyn.Sequencer.ClassHasFlowElements.FlowElement
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Class", PropertyDisplayNameKey="Sawczyn.Sequencer.ClassHasFlowElements/FlowElement.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("d4a9c985-41e9-4151-9e20-c8d03c9626c5")]
+		[DslModeling::DomainObjectId("66ed7de4-90a7-42e8-9605-8db388d28ab3")]
 		public virtual FlowElement FlowElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -1243,6 +936,533 @@ namespace Sawczyn.Sequencer
 			foreach ( global::Sawczyn.Sequencer.ClassHasFlowElements link in links )
 			{
 				if ( target.Equals(link.FlowElement) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Sawczyn.Sequencer
+{
+	/// <summary>
+	/// DomainRelationship FlowElementsCallCallables
+	/// Description for Sawczyn.Sequencer.FlowElementsCallCallables
+	/// </summary>
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElementsCallCallables.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElementsCallCallables.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("32b2e182-8cd9-44b9-ac87-b69671bd7d54")]
+	public partial class FlowElementsCallCallables : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// FlowElementsCallCallables domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x32b2e182, 0x8cd9, 0x44b9, 0xac, 0x87, 0xb6, 0x96, 0x71, 0xbd, 0x7d, 0x54);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a FlowElementsCallCallables link in the same Partition as the given FlowElement
+		/// </summary>
+		/// <param name="source">FlowElement to use as the source of the relationship.</param>
+		/// <param name="target">Callable to use as the target of the relationship.</param>
+		public FlowElementsCallCallables(FlowElement source, Callable target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FlowElementsCallCallables.FlowElementDomainRoleId, source), new DslModeling::RoleAssignment(FlowElementsCallCallables.CallableDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FlowElementsCallCallables(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FlowElementsCallCallables(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FlowElementsCallCallables(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FlowElementsCallCallables(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region FlowElement domain role code
+		
+		/// <summary>
+		/// FlowElement domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid FlowElementDomainRoleId = new global::System.Guid(0x68cc3f48, 0xd792, 0x413b, 0xb5, 0x50, 0x51, 0x05, 0x41, 0x8f, 0x6a, 0xe5);
+		
+		/// <summary>
+		/// DomainRole FlowElement
+		/// Description for Sawczyn.Sequencer.FlowElementsCallCallables.FlowElement
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElementsCallCallables/FlowElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElementsCallCallables/FlowElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "CallTarget", PropertyDisplayNameKey="Sawczyn.Sequencer.FlowElementsCallCallables/FlowElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("68cc3f48-d792-413b-b550-5105418f6ae5")]
+		public virtual FlowElement FlowElement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (FlowElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, FlowElementDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, FlowElementDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access CallSource of a Callable
+		/// <summary>
+		/// Gets a list of CallSource.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<FlowElement> GetCallSource(Callable element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(element, CallableDomainRoleId);
+		}
+		#endregion
+		#region Callable domain role code
+		
+		/// <summary>
+		/// Callable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CallableDomainRoleId = new global::System.Guid(0xe3eeba99, 0xb2c1, 0x4df0, 0x8c, 0x07, 0xc9, 0x6d, 0xaf, 0x86, 0xca, 0x70);
+		
+		/// <summary>
+		/// DomainRole Callable
+		/// Description for Sawczyn.Sequencer.FlowElementsCallCallables.Callable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElementsCallCallables/Callable.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElementsCallCallables/Callable.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "CallSource", PropertyDisplayNameKey="Sawczyn.Sequencer.FlowElementsCallCallables/Callable.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("e3eeba99-b2c1-4df0-8c07-c96daf86ca70")]
+		public virtual Callable Callable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Callable)DslModeling::DomainRoleInfo.GetRolePlayer(this, CallableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CallableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access CallTarget of a FlowElement
+		/// <summary>
+		/// Gets a list of CallTarget.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Callable> GetCallTarget(FlowElement element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(element, FlowElementDomainRoleId);
+		}
+		#endregion
+		#region IsAsync domain property code
+		
+		/// <summary>
+		/// IsAsync domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid IsAsyncDomainPropertyId = new global::System.Guid(0xbba76663, 0x10bf, 0x49c6, 0xb5, 0x97, 0xbd, 0xa1, 0x57, 0xe0, 0x4e, 0x27);
+		
+		/// <summary>
+		/// Storage for IsAsync
+		/// </summary>
+		private global::System.Boolean isAsyncPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of IsAsync domain property.
+		/// If true, call is asynchronous
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElementsCallCallables/IsAsync.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElementsCallCallables/IsAsync.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("bba76663-10bf-49c6-b597-bda157e04e27")]
+		public global::System.Boolean IsAsync
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return isAsyncPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				IsAsyncPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FlowElementsCallCallables.IsAsync domain property.
+		/// </summary>
+		internal sealed partial class IsAsyncPropertyHandler : DslModeling::DomainPropertyValueHandler<FlowElementsCallCallables, global::System.Boolean>
+		{
+			private IsAsyncPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FlowElementsCallCallables.IsAsync domain property value handler.
+			/// </summary>
+			public static readonly IsAsyncPropertyHandler Instance = new IsAsyncPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FlowElementsCallCallables.IsAsync domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return IsAsyncDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(FlowElementsCallCallables element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.isAsyncPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FlowElementsCallCallables element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.isAsyncPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region FlowElement link accessor
+		/// <summary>
+		/// Get the list of FlowElementsCallCallables links to a FlowElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.FlowElementsCallCallables> GetLinksToCallTarget ( global::Sawczyn.Sequencer.FlowElement flowElementInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.FlowElementsCallCallables>(flowElementInstance, global::Sawczyn.Sequencer.FlowElementsCallCallables.FlowElementDomainRoleId);
+		}
+		#endregion
+		#region Callable link accessor
+		/// <summary>
+		/// Get the list of FlowElementsCallCallables links to a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.FlowElementsCallCallables> GetLinksToCallSource ( global::Sawczyn.Sequencer.Callable callableInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.FlowElementsCallCallables>(callableInstance, global::Sawczyn.Sequencer.FlowElementsCallCallables.CallableDomainRoleId);
+		}
+		#endregion
+		#region FlowElementsCallCallables instance accessors
+		
+		/// <summary>
+		/// Get any FlowElementsCallCallables links between a given FlowElement and a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.FlowElementsCallCallables> GetLinks( global::Sawczyn.Sequencer.FlowElement source, global::Sawczyn.Sequencer.Callable target )
+		{
+			global::System.Collections.Generic.List<global::Sawczyn.Sequencer.FlowElementsCallCallables> outLinks = new global::System.Collections.Generic.List<global::Sawczyn.Sequencer.FlowElementsCallCallables>();
+			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.FlowElementsCallCallables> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.FlowElementsCallCallables>(source, global::Sawczyn.Sequencer.FlowElementsCallCallables.FlowElementDomainRoleId);
+			foreach ( global::Sawczyn.Sequencer.FlowElementsCallCallables link in links )
+			{
+				if ( target.Equals(link.Callable) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one FlowElementsCallCallables link between a given FlowElementand a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Sawczyn.Sequencer.FlowElementsCallCallables GetLink( global::Sawczyn.Sequencer.FlowElement source, global::Sawczyn.Sequencer.Callable target )
+		{
+			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.FlowElementsCallCallables> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.FlowElementsCallCallables>(source, global::Sawczyn.Sequencer.FlowElementsCallCallables.FlowElementDomainRoleId);
+			foreach ( global::Sawczyn.Sequencer.FlowElementsCallCallables link in links )
+			{
+				if ( target.Equals(link.Callable) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Sawczyn.Sequencer
+{
+	/// <summary>
+	/// DomainRelationship CallablesReturnResults
+	/// Description for Sawczyn.Sequencer.CallablesReturnResults
+	/// </summary>
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CallablesReturnResults.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.CallablesReturnResults.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("b111f5f5-f6cb-4110-bdfe-dca4e793030b")]
+	public partial class CallablesReturnResults : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// CallablesReturnResults domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb111f5f5, 0xf6cb, 0x4110, 0xbd, 0xfe, 0xdc, 0xa4, 0xe7, 0x93, 0x03, 0x0b);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a CallablesReturnResults link in the same Partition as the given Callable
+		/// </summary>
+		/// <param name="source">Callable to use as the source of the relationship.</param>
+		/// <param name="target">Callable to use as the target of the relationship.</param>
+		public CallablesReturnResults(Callable source, Callable target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(CallablesReturnResults.SourceCallableDomainRoleId, source), new DslModeling::RoleAssignment(CallablesReturnResults.TargetCallableDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CallablesReturnResults(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CallablesReturnResults(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public CallablesReturnResults(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public CallablesReturnResults(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region SourceCallable domain role code
+		
+		/// <summary>
+		/// SourceCallable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SourceCallableDomainRoleId = new global::System.Guid(0x84f9bd4c, 0x18c1, 0x4737, 0x9e, 0x61, 0x7d, 0xff, 0x43, 0x3e, 0xf4, 0x49);
+		
+		/// <summary>
+		/// DomainRole SourceCallable
+		/// Description for Sawczyn.Sequencer.CallablesReturnResults.SourceCallable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CallablesReturnResults/SourceCallable.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CallablesReturnResults/SourceCallable.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ResultTarget", PropertyDisplayNameKey="Sawczyn.Sequencer.CallablesReturnResults/SourceCallable.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("84f9bd4c-18c1-4737-9e61-7dff433ef449")]
+		public virtual Callable SourceCallable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Callable)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceCallableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceCallableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ResultSource of a Callable
+		/// <summary>
+		/// Gets a list of ResultSource.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Callable> GetResultSource(Callable element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(element, TargetCallableDomainRoleId);
+		}
+		#endregion
+		#region TargetCallable domain role code
+		
+		/// <summary>
+		/// TargetCallable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetCallableDomainRoleId = new global::System.Guid(0xe9c72606, 0x8b87, 0x49de, 0x8d, 0x65, 0x0e, 0xc4, 0x78, 0x63, 0x6c, 0x44);
+		
+		/// <summary>
+		/// DomainRole TargetCallable
+		/// Description for Sawczyn.Sequencer.CallablesReturnResults.TargetCallable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CallablesReturnResults/TargetCallable.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.CallablesReturnResults/TargetCallable.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResultSource", PropertyDisplayNameKey="Sawczyn.Sequencer.CallablesReturnResults/TargetCallable.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("e9c72606-8b87-49de-8d65-0ec478636c44")]
+		public virtual Callable TargetCallable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Callable)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetCallableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetCallableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ResultTarget of a Callable
+		/// <summary>
+		/// Gets a list of ResultTarget.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Callable> GetResultTarget(Callable element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(element, SourceCallableDomainRoleId);
+		}
+		#endregion
+		#region SourceCallable link accessor
+		/// <summary>
+		/// Get the list of CallablesReturnResults links to a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.CallablesReturnResults> GetLinksToResultTarget ( global::Sawczyn.Sequencer.Callable sourceCallableInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.CallablesReturnResults>(sourceCallableInstance, global::Sawczyn.Sequencer.CallablesReturnResults.SourceCallableDomainRoleId);
+		}
+		#endregion
+		#region TargetCallable link accessor
+		/// <summary>
+		/// Get the list of CallablesReturnResults links to a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.CallablesReturnResults> GetLinksToResultSource ( global::Sawczyn.Sequencer.Callable targetCallableInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.CallablesReturnResults>(targetCallableInstance, global::Sawczyn.Sequencer.CallablesReturnResults.TargetCallableDomainRoleId);
+		}
+		#endregion
+		#region CallablesReturnResults instance accessors
+		
+		/// <summary>
+		/// Get any CallablesReturnResults links between a given Callable and a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.CallablesReturnResults> GetLinks( global::Sawczyn.Sequencer.Callable source, global::Sawczyn.Sequencer.Callable target )
+		{
+			global::System.Collections.Generic.List<global::Sawczyn.Sequencer.CallablesReturnResults> outLinks = new global::System.Collections.Generic.List<global::Sawczyn.Sequencer.CallablesReturnResults>();
+			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.CallablesReturnResults> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.CallablesReturnResults>(source, global::Sawczyn.Sequencer.CallablesReturnResults.SourceCallableDomainRoleId);
+			foreach ( global::Sawczyn.Sequencer.CallablesReturnResults link in links )
+			{
+				if ( target.Equals(link.TargetCallable) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one CallablesReturnResults link between a given Callableand a Callable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Sawczyn.Sequencer.CallablesReturnResults GetLink( global::Sawczyn.Sequencer.Callable source, global::Sawczyn.Sequencer.Callable target )
+		{
+			global::System.Collections.Generic.IList<global::Sawczyn.Sequencer.CallablesReturnResults> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Sawczyn.Sequencer.CallablesReturnResults>(source, global::Sawczyn.Sequencer.CallablesReturnResults.SourceCallableDomainRoleId);
+			foreach ( global::Sawczyn.Sequencer.CallablesReturnResults link in links )
+			{
+				if ( target.Equals(link.TargetCallable) )
 				{
 					return link;
 				}

@@ -17,11 +17,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass MethodShape
 	/// Description for Sawczyn.Sequencer.MethodShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.MethodShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.MethodShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.MethodShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.MethodShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("d4d6c0d0-5262-4d75-b388-e2fe507c1674")]
+	[DslModeling::DomainObjectId("81201982-7782-46a7-9b85-b6a10629aa5c")]
 	public partial class MethodShape : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
@@ -169,6 +169,33 @@ namespace Sawczyn.Sequencer
 			}
 		}
 		#endregion
+		#region Custom storage for shape properties that appear in the property grid
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private global::System.Drawing.Color GetFillColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromArgb(255, 213, 231, 205);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private void SetFillColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.ShapeBackground);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, settings);
+			this.Invalidate();
+		}
+		
+		#endregion
 		#region Decorators
 		/// <summary>
 		/// Initialize the collection of shape fields associated with this shape type.
@@ -227,7 +254,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// MethodShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd4d6c0d0, 0x5262, 0x4d75, 0xb3, 0x88, 0xe2, 0xfe, 0x50, 0x7c, 0x16, 0x74);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x81201982, 0x7782, 0x46a7, 0x9b, 0x85, 0xb6, 0xa1, 0x06, 0x29, 0xaa, 0x5c);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -248,6 +275,95 @@ namespace Sawczyn.Sequencer
 		{
 		}
 		#endregion
+		#region FillColor domain property code
+		
+		/// <summary>
+		/// FillColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillColorDomainPropertyId = new global::System.Guid(0xf0fd2c3c, 0x7ee7, 0x47e6, 0xa3, 0xf5, 0x8d, 0x1f, 0x6c, 0xb6, 0x3f, 0x66);
+		
+		/// <summary>
+		/// Gets or sets the value of FillColor domain property.
+		/// Description for Sawczyn.Sequencer.MethodShape.Fill Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.MethodShape/FillColor.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.MethodShape/FillColor.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("f0fd2c3c-7ee7-47e6-a3f5-8d1f6cb63f66")]
+		public global::System.Drawing.Color FillColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the MethodShape.FillColor domain property.
+		/// </summary>
+		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<MethodShape, global::System.Drawing.Color>
+		{
+			private FillColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the MethodShape.FillColor domain property value handler.
+			/// </summary>
+			public static readonly FillColorPropertyHandler Instance = new FillColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the MethodShape.FillColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(MethodShape element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillColor because its Kind is
+				// set to CustomStorage. Please provide the GetFillColorValue()
+				// method on the domain class.
+				return element.GetFillColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(MethodShape element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillColor because its Kind is
+					// set to CustomStorage. Please provide the SetFillColorValue()
+					// method on the domain class.
+					element.SetFillColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
+		#endregion
 	}
 }
 namespace Sawczyn.Sequencer
@@ -256,11 +372,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass CommentBoxShape
 	/// Description for Sawczyn.Sequencer.CommentBoxShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentBoxShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentBoxShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.CommentBoxShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.CommentBoxShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("a28a75a6-3401-42ce-8ade-58f442289ca7")]
+	[DslModeling::DomainObjectId("4f4d929a-16e9-4745-9064-fcd52c0e1ae7")]
 	public partial class CommentBoxShape : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
@@ -456,7 +572,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// CommentBoxShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xa28a75a6, 0x3401, 0x42ce, 0x8a, 0xde, 0x58, 0xf4, 0x42, 0x28, 0x9c, 0xa7);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4f4d929a, 0x16e9, 0x4745, 0x90, 0x64, 0xfc, 0xd5, 0x2c, 0x0e, 0x1a, 0xe7);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -485,11 +601,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass BranchShape
 	/// Description for Sawczyn.Sequencer.BranchShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.BranchShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.BranchShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.BranchShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.BranchShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("0fe1f526-6e58-478d-be60-28d0e8133649")]
+	[DslModeling::DomainObjectId("38a41370-743a-40fe-8701-ce9e3afa19b0")]
 	public partial class BranchShape : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
@@ -563,24 +679,6 @@ namespace Sawczyn.Sequencer
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
 		}
 		
-		
-		/// <summary>
-		/// Shape instance initialization.
-		/// </summary>
-		public override void OnInitialize()
-		{
-			base.OnInitialize();
-			
-			// Create host shapes for outer decorators.
-			foreach(DslDiagrams::Decorator decorator in this.Decorators)
-			{
-				if(decorator.RequiresHost)
-				{
-					decorator.ConfigureHostShape(this);
-				}
-			}
-			
-		}
 		#endregion
 		#region Shape size
 		
@@ -611,56 +709,6 @@ namespace Sawczyn.Sequencer
 		}
 		
 		#endregion
-		#region Decorators
-		/// <summary>
-		/// Initialize the collection of shape fields associated with this shape type.
-		/// </summary>
-		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
-		{
-			base.InitializeShapeFields(shapeFields);
-		}
-		
-		/// <summary>
-		/// Initialize the collection of decorators associated with this shape type.  This method also
-		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
-		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
-		/// </summary>
-		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
-		{
-			base.InitializeDecorators(shapeFields, decorators);
-			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Condition");
-			field1.DefaultText = global::Sawczyn.Sequencer.SequencerDomainModel.SingletonResourceManager.GetString("BranchShapeConditionDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterBottomCenter, DslDiagrams::PointD.Empty);
-			decorators.Add(decorator1);
-				
-		}
-		
-		/// <summary>
-		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
-		/// after the shape has been associated with the model element.
-		/// </summary>
-		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
-		{
-			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
-			
-			if(iteration == 0)
-			{
-				foreach(DslDiagrams::Decorator decorator in this.Decorators)
-				{
-					if(decorator.RequiresHost)
-					{
-						decorator.RepositionHostShape(decorator.GetHostShape(this));
-					}
-				}
-			}
-		}
-		#endregion
 		/// <summary>
 		/// Provide the specific Image for this Shape class
 		/// </summary>
@@ -677,7 +725,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// BranchShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x0fe1f526, 0x6e58, 0x478d, 0xbe, 0x60, 0x28, 0xd0, 0xe8, 0x13, 0x36, 0x49);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x38a41370, 0x743a, 0x40fe, 0x87, 0x01, 0xce, 0x9e, 0x3a, 0xfa, 0x19, 0xb0);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -706,11 +754,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass EndShape
 	/// Description for Sawczyn.Sequencer.EndShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.EndShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.EndShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.EndShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.EndShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("4fdb204f-47b1-4f54-956e-d6ff9030c5ce")]
+	[DslModeling::DomainObjectId("fa1333b5-02e3-4877-997f-6d7d8327704e")]
 	public partial class EndShape : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
@@ -830,7 +878,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// EndShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4fdb204f, 0x47b1, 0x4f54, 0x95, 0x6e, 0xd6, 0xff, 0x90, 0x30, 0xc5, 0xce);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xfa1333b5, 0x02e3, 0x4877, 0x99, 0x7f, 0x6d, 0x7d, 0x83, 0x27, 0x70, 0x4e);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -859,11 +907,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass StartShape
 	/// Description for Sawczyn.Sequencer.StartShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.StartShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.StartShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.StartShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.StartShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("4e2aa50c-71ea-427e-a26b-d3437a18734a")]
+	[DslModeling::DomainObjectId("859e5261-e04d-4ba0-8d61-c5fddaca06ad")]
 	public partial class StartShape : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
@@ -983,7 +1031,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// StartShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4e2aa50c, 0x71ea, 0x427e, 0xa2, 0x6b, 0xd3, 0x43, 0x7a, 0x18, 0x73, 0x4a);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x859e5261, 0xe04d, 0x4ba0, 0x8d, 0x61, 0xc5, 0xfd, 0xda, 0xca, 0x06, 0xad);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -1012,11 +1060,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass SyncBarShape
 	/// Description for Sawczyn.Sequencer.SyncBarShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SyncBarShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SyncBarShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SyncBarShape.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SyncBarShape.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("d1434f42-7d66-4fd3-ad36-2e683b63c3e7")]
+	[DslModeling::DomainObjectId("2195dbd5-47c8-430f-9c86-10921ddb3f60")]
 	public partial class SyncBarShape : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
@@ -1141,7 +1189,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SyncBarShape domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd1434f42, 0x7d66, 0x4fd3, 0xad, 0x36, 0x2e, 0x68, 0x3b, 0x63, 0xc3, 0xe7);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2195dbd5, 0x47c8, 0x430f, 0x9c, 0x86, 0x10, 0x92, 0x1d, 0xdb, 0x3f, 0x60);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -1168,13 +1216,13 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainClass SwimLane
-	/// Description for Sawczyn.Sequencer.SwimLane
+	/// Represents a .NET class in the project
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SwimLane.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SwimLane.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SwimLane.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SwimLane.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("b7889f37-f7c0-44a7-9c8b-a8162be04469")]
+	[DslModeling::DomainObjectId("da447f55-31a6-4844-ac7b-f9036a1e78d2")]
 	public partial class SwimLane : DslDiagrams::SwimlaneShape
 	{
 		#region DiagramElement boilerplate
@@ -1312,9 +1360,9 @@ namespace Sawczyn.Sequencer
 			// Custom font styles
 			DslDiagrams::FontSettings fontSettings;
 			fontSettings = new DslDiagrams::FontSettings();
-			fontSettings.Style =  global::System.Drawing.FontStyle.Regular ;
-			fontSettings.Size = 10/72.0F;
-			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextRegular10"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
+			fontSettings.Style =  global::System.Drawing.FontStyle.Italic ;
+			fontSettings.Size = 8/72.0F;
+			classStyleSet.AddFont(new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextItalic8"), DslDiagrams::DiagramFonts.ShapeText, fontSettings);
 		}
 		#endregion
 		#region Decorators
@@ -1331,8 +1379,17 @@ namespace Sawczyn.Sequencer
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			field1.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextRegular10");			
 			shapeFields.Add(field1);
+			
+			DslDiagrams::TextField field2 = new DslDiagrams::TextField("AssemblyName");
+			field2.DefaultText = global::Sawczyn.Sequencer.SequencerDomainModel.SingletonResourceManager.GetString("SwimLaneAssemblyNameDefaultText");
+			field2.DefaultFocusable = true;
+			field2.DefaultAutoSize = true;
+			field2.AnchoringBehavior.MinimumHeightInLines = 1;
+			field2.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field2.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			field2.DefaultFontId = new DslDiagrams::StyleSetResourceId(string.Empty, "ShapeTextItalic8");			
+			shapeFields.Add(field2);
 			
 		}
 		
@@ -1346,8 +1403,12 @@ namespace Sawczyn.Sequencer
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ClassName");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "AssemblyName");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
 				
 		}
 		
@@ -1369,7 +1430,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SwimLane domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb7889f37, 0xf7c0, 0x44a7, 0x9c, 0x8b, 0xa8, 0x16, 0x2b, 0xe0, 0x44, 0x69);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xda447f55, 0x31a6, 0x4844, 0xac, 0x7b, 0xf9, 0x03, 0x6a, 0x1e, 0x78, 0xd2);
 		/// <summary>
 		/// Constructor
 		/// </summary>

@@ -15,448 +15,6 @@ namespace Sawczyn.Sequencer
 	/// <summary>
 	/// ConnectionBuilder class to provide logic for constructing connections between elements.
 	/// </summary>
-	public static partial class FlowBuilder
-	{
-		#region Accept Connection Methods
-		/// <summary>
-		/// Test whether a given model element is acceptable to this ConnectionBuilder as the source of a connection.
-		/// </summary>
-		/// <param name="candidate">The model element to test.</param>
-		/// <returns>Whether the element can be used as the source of a connection.</returns>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
-		{
-			if (candidate == null) return false;
-			else if (candidate is global::Sawczyn.Sequencer.Method)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.Branch)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.StartPoint)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.Synchronization)
-			{ 
-				return true;
-			}
-			else
-				return false;
-		}
-
-		/// <summary>
-		/// Test whether a given model element is acceptable to this ConnectionBuilder as the target of a connection.
-		/// </summary>
-		/// <param name="candidate">The model element to test.</param>
-		/// <returns>Whether the element can be used as the target of a connection.</returns>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		public static bool CanAcceptTarget(DslModeling::ModelElement candidate)
-		{
-			if (candidate == null) return false;
-			else if (candidate is global::Sawczyn.Sequencer.Method)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.Branch)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.EndPoint)
-			{ 
-				return true;
-			}
-			else if (candidate is global::Sawczyn.Sequencer.Synchronization)
-			{ 
-				return true;
-			}
-			else
-				return false;
-		}
-		
-		/// <summary>
-		/// Test whether a given pair of model elements are acceptable to this ConnectionBuilder as the source and target of a connection
-		/// </summary>
-		/// <param name="candidateSource">The model element to test as a source</param>
-		/// <param name="candidateTarget">The model element to test as a target</param>
-		/// <returns>Whether the elements can be used as the source and target of a connection</returns>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
-		public static bool CanAcceptSourceAndTarget(DslModeling::ModelElement candidateSource, DslModeling::ModelElement candidateTarget)
-		{
-			// Accepts null, null; source, null; source, target but NOT null, target
-			if (candidateSource == null)
-			{
-				if (candidateTarget != null)
-				{
-					throw new global::System.ArgumentNullException("candidateSource");
-				}
-				else // Both null
-				{
-					return false;
-				}
-			}
-			bool acceptSource = CanAcceptSource(candidateSource);
-			// If the source wasn't accepted then there's no point checking targets.
-			// If there is no target then the source controls the accept.
-			if (!acceptSource || candidateTarget == null)
-			{
-				return acceptSource;
-			}
-			else // Check combinations
-			{
-				if (candidateSource is global::Sawczyn.Sequencer.Method)
-				{
-					if (candidateTarget is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Method sourceMethod = (global::Sawczyn.Sequencer.Method)candidateSource;
-						global::Sawczyn.Sequencer.Method targetMethod = (global::Sawczyn.Sequencer.Method)candidateTarget;
-						if(targetMethod == null || sourceMethod == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceMethod, targetMethod).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Method sourceMethod = (global::Sawczyn.Sequencer.Method)candidateSource;
-						global::Sawczyn.Sequencer.Branch targetBranch = (global::Sawczyn.Sequencer.Branch)candidateTarget;
-						if(targetBranch == null || sourceMethod == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceMethod, targetBranch).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Method sourceMethod = (global::Sawczyn.Sequencer.Method)candidateSource;
-						global::Sawczyn.Sequencer.EndPoint targetEndPoint = (global::Sawczyn.Sequencer.EndPoint)candidateTarget;
-						if(targetEndPoint == null || sourceMethod == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceMethod, targetEndPoint).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Method sourceMethod = (global::Sawczyn.Sequencer.Method)candidateSource;
-						global::Sawczyn.Sequencer.Synchronization targetSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateTarget;
-						if(targetSynchronization == null || sourceMethod == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceMethod, targetSynchronization).Count > 0) return false;
-						return true;
-					}
-				}
-				if (candidateSource is global::Sawczyn.Sequencer.Branch)
-				{
-					if (candidateTarget is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Branch sourceBranch = (global::Sawczyn.Sequencer.Branch)candidateSource;
-						global::Sawczyn.Sequencer.Method targetMethod = (global::Sawczyn.Sequencer.Method)candidateTarget;
-						if(targetMethod == null || sourceBranch == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceBranch, targetMethod).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Branch sourceBranch = (global::Sawczyn.Sequencer.Branch)candidateSource;
-						global::Sawczyn.Sequencer.Branch targetBranch = (global::Sawczyn.Sequencer.Branch)candidateTarget;
-						if(targetBranch == null || sourceBranch == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceBranch, targetBranch).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Branch sourceBranch = (global::Sawczyn.Sequencer.Branch)candidateSource;
-						global::Sawczyn.Sequencer.EndPoint targetEndPoint = (global::Sawczyn.Sequencer.EndPoint)candidateTarget;
-						if(targetEndPoint == null || sourceBranch == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceBranch, targetEndPoint).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Branch sourceBranch = (global::Sawczyn.Sequencer.Branch)candidateSource;
-						global::Sawczyn.Sequencer.Synchronization targetSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateTarget;
-						if(targetSynchronization == null || sourceBranch == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceBranch, targetSynchronization).Count > 0) return false;
-						return true;
-					}
-				}
-				if (candidateSource is global::Sawczyn.Sequencer.StartPoint)
-				{
-					if (candidateTarget is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceStartPoint = (global::Sawczyn.Sequencer.StartPoint)candidateSource;
-						global::Sawczyn.Sequencer.Method targetMethod = (global::Sawczyn.Sequencer.Method)candidateTarget;
-						if(targetMethod == null || sourceStartPoint == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceStartPoint, targetMethod).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceStartPoint = (global::Sawczyn.Sequencer.StartPoint)candidateSource;
-						global::Sawczyn.Sequencer.Branch targetBranch = (global::Sawczyn.Sequencer.Branch)candidateTarget;
-						if(targetBranch == null || sourceStartPoint == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceStartPoint, targetBranch).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceStartPoint = (global::Sawczyn.Sequencer.StartPoint)candidateSource;
-						global::Sawczyn.Sequencer.EndPoint targetEndPoint = (global::Sawczyn.Sequencer.EndPoint)candidateTarget;
-						if(targetEndPoint == null || sourceStartPoint == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceStartPoint, targetEndPoint).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceStartPoint = (global::Sawczyn.Sequencer.StartPoint)candidateSource;
-						global::Sawczyn.Sequencer.Synchronization targetSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateTarget;
-						if(targetSynchronization == null || sourceStartPoint == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceStartPoint, targetSynchronization).Count > 0) return false;
-						return true;
-					}
-				}
-				if (candidateSource is global::Sawczyn.Sequencer.Synchronization)
-				{
-					if (candidateTarget is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateSource;
-						global::Sawczyn.Sequencer.Method targetMethod = (global::Sawczyn.Sequencer.Method)candidateTarget;
-						if(targetMethod == null || sourceSynchronization == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceSynchronization, targetMethod).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateSource;
-						global::Sawczyn.Sequencer.Branch targetBranch = (global::Sawczyn.Sequencer.Branch)candidateTarget;
-						if(targetBranch == null || sourceSynchronization == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceSynchronization, targetBranch).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateSource;
-						global::Sawczyn.Sequencer.EndPoint targetEndPoint = (global::Sawczyn.Sequencer.EndPoint)candidateTarget;
-						if(targetEndPoint == null || sourceSynchronization == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceSynchronization, targetEndPoint).Count > 0) return false;
-						return true;
-					}
-					else if (candidateTarget is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateSource;
-						global::Sawczyn.Sequencer.Synchronization targetSynchronization = (global::Sawczyn.Sequencer.Synchronization)candidateTarget;
-						if(targetSynchronization == null || sourceSynchronization == null || global::Sawczyn.Sequencer.Flow.GetLinks(sourceSynchronization, targetSynchronization).Count > 0) return false;
-						return true;
-					}
-				}
-				
-			}
-			return false;
-		}
-		#endregion
-
-		#region Connection Methods
-		/// <summary>
-		/// Make a connection between the given pair of source and target elements
-		/// </summary>
-		/// <param name="source">The model element to use as the source of the connection</param>
-		/// <param name="target">The model element to use as the target of the connection</param>
-		/// <returns>A link representing the created connection</returns>
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
-		public static DslModeling::ElementLink Connect(DslModeling::ModelElement source, DslModeling::ModelElement target)
-		{
-			if (source == null)
-			{
-				throw new global::System.ArgumentNullException("source");
-			}
-			if (target == null)
-			{
-				throw new global::System.ArgumentNullException("target");
-			}
-			
-			if (CanAcceptSourceAndTarget(source, target))
-			{
-				if (source is global::Sawczyn.Sequencer.Method)
-				{
-					if (target is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Method sourceAccepted = (global::Sawczyn.Sequencer.Method)source;
-						global::Sawczyn.Sequencer.Method targetAccepted = (global::Sawczyn.Sequencer.Method)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Method sourceAccepted = (global::Sawczyn.Sequencer.Method)source;
-						global::Sawczyn.Sequencer.Branch targetAccepted = (global::Sawczyn.Sequencer.Branch)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Method sourceAccepted = (global::Sawczyn.Sequencer.Method)source;
-						global::Sawczyn.Sequencer.EndPoint targetAccepted = (global::Sawczyn.Sequencer.EndPoint)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Method sourceAccepted = (global::Sawczyn.Sequencer.Method)source;
-						global::Sawczyn.Sequencer.Synchronization targetAccepted = (global::Sawczyn.Sequencer.Synchronization)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-				}
-				if (source is global::Sawczyn.Sequencer.Branch)
-				{
-					if (target is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Branch sourceAccepted = (global::Sawczyn.Sequencer.Branch)source;
-						global::Sawczyn.Sequencer.Method targetAccepted = (global::Sawczyn.Sequencer.Method)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Branch sourceAccepted = (global::Sawczyn.Sequencer.Branch)source;
-						global::Sawczyn.Sequencer.Branch targetAccepted = (global::Sawczyn.Sequencer.Branch)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Branch sourceAccepted = (global::Sawczyn.Sequencer.Branch)source;
-						global::Sawczyn.Sequencer.EndPoint targetAccepted = (global::Sawczyn.Sequencer.EndPoint)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Branch sourceAccepted = (global::Sawczyn.Sequencer.Branch)source;
-						global::Sawczyn.Sequencer.Synchronization targetAccepted = (global::Sawczyn.Sequencer.Synchronization)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-				}
-				if (source is global::Sawczyn.Sequencer.StartPoint)
-				{
-					if (target is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceAccepted = (global::Sawczyn.Sequencer.StartPoint)source;
-						global::Sawczyn.Sequencer.Method targetAccepted = (global::Sawczyn.Sequencer.Method)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceAccepted = (global::Sawczyn.Sequencer.StartPoint)source;
-						global::Sawczyn.Sequencer.Branch targetAccepted = (global::Sawczyn.Sequencer.Branch)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceAccepted = (global::Sawczyn.Sequencer.StartPoint)source;
-						global::Sawczyn.Sequencer.EndPoint targetAccepted = (global::Sawczyn.Sequencer.EndPoint)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.StartPoint sourceAccepted = (global::Sawczyn.Sequencer.StartPoint)source;
-						global::Sawczyn.Sequencer.Synchronization targetAccepted = (global::Sawczyn.Sequencer.Synchronization)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-				}
-				if (source is global::Sawczyn.Sequencer.Synchronization)
-				{
-					if (target is global::Sawczyn.Sequencer.Method)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceAccepted = (global::Sawczyn.Sequencer.Synchronization)source;
-						global::Sawczyn.Sequencer.Method targetAccepted = (global::Sawczyn.Sequencer.Method)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Branch)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceAccepted = (global::Sawczyn.Sequencer.Synchronization)source;
-						global::Sawczyn.Sequencer.Branch targetAccepted = (global::Sawczyn.Sequencer.Branch)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.EndPoint)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceAccepted = (global::Sawczyn.Sequencer.Synchronization)source;
-						global::Sawczyn.Sequencer.EndPoint targetAccepted = (global::Sawczyn.Sequencer.EndPoint)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-					else if (target is global::Sawczyn.Sequencer.Synchronization)
-					{
-						global::Sawczyn.Sequencer.Synchronization sourceAccepted = (global::Sawczyn.Sequencer.Synchronization)source;
-						global::Sawczyn.Sequencer.Synchronization targetAccepted = (global::Sawczyn.Sequencer.Synchronization)target;
-						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.Flow(sourceAccepted, targetAccepted);
-						if (DslModeling::DomainClassInfo.HasNameProperty(result))
-						{
-							DslModeling::DomainClassInfo.SetUniqueName(result);
-						}
-						return result;
-					}
-				}
-				
-			}
-			global::System.Diagnostics.Debug.Fail("Having agreed that the connection can be accepted we should never fail to make one.");
-			throw new global::System.InvalidOperationException();
-		}
-		#endregion
- 	}
-	/// <summary>
-	/// ConnectionBuilder class to provide logic for constructing connections between elements.
-	/// </summary>
 	public static partial class CommentReferencesSubjectsBuilder
 	{
 		#region Accept Connection Methods
@@ -584,18 +142,278 @@ namespace Sawczyn.Sequencer
 		}
 		#endregion
  	}
+	/// <summary>
+	/// ConnectionBuilder class to provide logic for constructing connections between elements.
+	/// </summary>
+	public static partial class FlowElementsCallCallablesBuilder
+	{
+		#region Accept Connection Methods
+		/// <summary>
+		/// Test whether a given model element is acceptable to this ConnectionBuilder as the source of a connection.
+		/// </summary>
+		/// <param name="candidate">The model element to test.</param>
+		/// <returns>Whether the element can be used as the source of a connection.</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
+		{
+			if (candidate == null) return false;
+			else if (candidate is global::Sawczyn.Sequencer.FlowElement)
+			{ 
+				return true;
+			}
+			else
+				return false;
+		}
+
+		/// <summary>
+		/// Test whether a given model element is acceptable to this ConnectionBuilder as the target of a connection.
+		/// </summary>
+		/// <param name="candidate">The model element to test.</param>
+		/// <returns>Whether the element can be used as the target of a connection.</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		public static bool CanAcceptTarget(DslModeling::ModelElement candidate)
+		{
+			if (candidate == null) return false;
+			else if (candidate is global::Sawczyn.Sequencer.Callable)
+			{ 
+				return true;
+			}
+			else
+				return false;
+		}
+		
+		/// <summary>
+		/// Test whether a given pair of model elements are acceptable to this ConnectionBuilder as the source and target of a connection
+		/// </summary>
+		/// <param name="candidateSource">The model element to test as a source</param>
+		/// <param name="candidateTarget">The model element to test as a target</param>
+		/// <returns>Whether the elements can be used as the source and target of a connection</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		public static bool CanAcceptSourceAndTarget(DslModeling::ModelElement candidateSource, DslModeling::ModelElement candidateTarget)
+		{
+			// Accepts null, null; source, null; source, target but NOT null, target
+			if (candidateSource == null)
+			{
+				if (candidateTarget != null)
+				{
+					throw new global::System.ArgumentNullException("candidateSource");
+				}
+				else // Both null
+				{
+					return false;
+				}
+			}
+			bool acceptSource = CanAcceptSource(candidateSource);
+			// If the source wasn't accepted then there's no point checking targets.
+			// If there is no target then the source controls the accept.
+			if (!acceptSource || candidateTarget == null)
+			{
+				return acceptSource;
+			}
+			else // Check combinations
+			{
+				if (candidateSource is global::Sawczyn.Sequencer.FlowElement)
+				{
+					if (candidateTarget is global::Sawczyn.Sequencer.Callable)
+					{
+						global::Sawczyn.Sequencer.FlowElement sourceFlowElement = (global::Sawczyn.Sequencer.FlowElement)candidateSource;
+						global::Sawczyn.Sequencer.Callable targetCallable = (global::Sawczyn.Sequencer.Callable)candidateTarget;
+						if(targetCallable == null || sourceFlowElement == null || global::Sawczyn.Sequencer.FlowElementsCallCallables.GetLinks(sourceFlowElement, targetCallable).Count > 0) return false;
+						return true;
+					}
+				}
+				
+			}
+			return false;
+		}
+		#endregion
+
+		#region Connection Methods
+		/// <summary>
+		/// Make a connection between the given pair of source and target elements
+		/// </summary>
+		/// <param name="source">The model element to use as the source of the connection</param>
+		/// <param name="target">The model element to use as the target of the connection</param>
+		/// <returns>A link representing the created connection</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		public static DslModeling::ElementLink Connect(DslModeling::ModelElement source, DslModeling::ModelElement target)
+		{
+			if (source == null)
+			{
+				throw new global::System.ArgumentNullException("source");
+			}
+			if (target == null)
+			{
+				throw new global::System.ArgumentNullException("target");
+			}
+			
+			if (CanAcceptSourceAndTarget(source, target))
+			{
+				if (source is global::Sawczyn.Sequencer.FlowElement)
+				{
+					if (target is global::Sawczyn.Sequencer.Callable)
+					{
+						global::Sawczyn.Sequencer.FlowElement sourceAccepted = (global::Sawczyn.Sequencer.FlowElement)source;
+						global::Sawczyn.Sequencer.Callable targetAccepted = (global::Sawczyn.Sequencer.Callable)target;
+						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.FlowElementsCallCallables(sourceAccepted, targetAccepted);
+						if (DslModeling::DomainClassInfo.HasNameProperty(result))
+						{
+							DslModeling::DomainClassInfo.SetUniqueName(result);
+						}
+						return result;
+					}
+				}
+				
+			}
+			global::System.Diagnostics.Debug.Fail("Having agreed that the connection can be accepted we should never fail to make one.");
+			throw new global::System.InvalidOperationException();
+		}
+		#endregion
+ 	}
+	/// <summary>
+	/// ConnectionBuilder class to provide logic for constructing connections between elements.
+	/// </summary>
+	public static partial class CallablesReturnResultsBuilder
+	{
+		#region Accept Connection Methods
+		/// <summary>
+		/// Test whether a given model element is acceptable to this ConnectionBuilder as the source of a connection.
+		/// </summary>
+		/// <param name="candidate">The model element to test.</param>
+		/// <returns>Whether the element can be used as the source of a connection.</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
+		{
+			if (candidate == null) return false;
+			else if (candidate is global::Sawczyn.Sequencer.Callable)
+			{ 
+				return true;
+			}
+			else
+				return false;
+		}
+
+		/// <summary>
+		/// Test whether a given model element is acceptable to this ConnectionBuilder as the target of a connection.
+		/// </summary>
+		/// <param name="candidate">The model element to test.</param>
+		/// <returns>Whether the element can be used as the target of a connection.</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		public static bool CanAcceptTarget(DslModeling::ModelElement candidate)
+		{
+			if (candidate == null) return false;
+			else if (candidate is global::Sawczyn.Sequencer.Callable)
+			{ 
+				return true;
+			}
+			else
+				return false;
+		}
+		
+		/// <summary>
+		/// Test whether a given pair of model elements are acceptable to this ConnectionBuilder as the source and target of a connection
+		/// </summary>
+		/// <param name="candidateSource">The model element to test as a source</param>
+		/// <param name="candidateTarget">The model element to test as a target</param>
+		/// <returns>Whether the elements can be used as the source and target of a connection</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		public static bool CanAcceptSourceAndTarget(DslModeling::ModelElement candidateSource, DslModeling::ModelElement candidateTarget)
+		{
+			// Accepts null, null; source, null; source, target but NOT null, target
+			if (candidateSource == null)
+			{
+				if (candidateTarget != null)
+				{
+					throw new global::System.ArgumentNullException("candidateSource");
+				}
+				else // Both null
+				{
+					return false;
+				}
+			}
+			bool acceptSource = CanAcceptSource(candidateSource);
+			// If the source wasn't accepted then there's no point checking targets.
+			// If there is no target then the source controls the accept.
+			if (!acceptSource || candidateTarget == null)
+			{
+				return acceptSource;
+			}
+			else // Check combinations
+			{
+				if (candidateSource is global::Sawczyn.Sequencer.Callable)
+				{
+					if (candidateTarget is global::Sawczyn.Sequencer.Callable)
+					{
+						global::Sawczyn.Sequencer.Callable sourceCallable = (global::Sawczyn.Sequencer.Callable)candidateSource;
+						global::Sawczyn.Sequencer.Callable targetCallable = (global::Sawczyn.Sequencer.Callable)candidateTarget;
+						if(targetCallable == null || sourceCallable == null || global::Sawczyn.Sequencer.CallablesReturnResults.GetLinks(sourceCallable, targetCallable).Count > 0) return false;
+						return true;
+					}
+				}
+				
+			}
+			return false;
+		}
+		#endregion
+
+		#region Connection Methods
+		/// <summary>
+		/// Make a connection between the given pair of source and target elements
+		/// </summary>
+		/// <param name="source">The model element to use as the source of the connection</param>
+		/// <param name="target">The model element to use as the target of the connection</param>
+		/// <returns>A link representing the created connection</returns>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		public static DslModeling::ElementLink Connect(DslModeling::ModelElement source, DslModeling::ModelElement target)
+		{
+			if (source == null)
+			{
+				throw new global::System.ArgumentNullException("source");
+			}
+			if (target == null)
+			{
+				throw new global::System.ArgumentNullException("target");
+			}
+			
+			if (CanAcceptSourceAndTarget(source, target))
+			{
+				if (source is global::Sawczyn.Sequencer.Callable)
+				{
+					if (target is global::Sawczyn.Sequencer.Callable)
+					{
+						global::Sawczyn.Sequencer.Callable sourceAccepted = (global::Sawczyn.Sequencer.Callable)source;
+						global::Sawczyn.Sequencer.Callable targetAccepted = (global::Sawczyn.Sequencer.Callable)target;
+						DslModeling::ElementLink result = new global::Sawczyn.Sequencer.CallablesReturnResults(sourceAccepted, targetAccepted);
+						if (DslModeling::DomainClassInfo.HasNameProperty(result))
+						{
+							DslModeling::DomainClassInfo.SetUniqueName(result);
+						}
+						return result;
+					}
+				}
+				
+			}
+			global::System.Diagnostics.Debug.Fail("Having agreed that the connection can be accepted we should never fail to make one.");
+			throw new global::System.InvalidOperationException();
+		}
+		#endregion
+ 	}
  	
  	/// <summary>
 	/// Handles interaction between the ConnectionBuilder and the corresponding ConnectionTool.
 	/// </summary>
-	internal partial class MethodCallConnectAction : DslDiagrams::ConnectAction
+	internal partial class FlowConnectAction : DslDiagrams::ConnectAction
 	{
 		private DslDiagrams::ConnectionType[] connectionTypes;
 		
 		/// <summary>
-		/// Constructs a new MethodCallConnectAction for the given Diagram.
+		/// Constructs a new FlowConnectAction for the given Diagram.
 		/// </summary>
-		public MethodCallConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
+		public FlowConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
 		{
 		}
 		
@@ -625,24 +443,24 @@ namespace Sawczyn.Sequencer
 		
 		
 		/// <summary>
-		/// Returns the MethodCallConnectionType associated with this action.
+		/// Returns the FlowConnectionType associated with this action.
 		/// </summary>
 		protected override DslDiagrams::ConnectionType[] GetConnectionTypes(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement)
 		{
 			if(this.connectionTypes == null)
 			{
-				this.connectionTypes = new DslDiagrams::ConnectionType[] { new MethodCallConnectionType() };
+				this.connectionTypes = new DslDiagrams::ConnectionType[] { new FlowConnectionType() };
 			}
 			
 			return this.connectionTypes;
 		}
 		
-		private partial class MethodCallConnectionTypeBase : DslDiagrams::ConnectionType
+		private partial class FlowConnectionTypeBase : DslDiagrams::ConnectionType
 		{
 			/// <summary>
-			/// Constructs a new the MethodCallConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the FlowConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			protected MethodCallConnectionTypeBase() : base() {}
+			protected FlowConnectionTypeBase() : base() {}
 			
 			private static DslDiagrams::ShapeElement RemovePassThroughShapes(DslDiagrams::ShapeElement shape)
 			{
@@ -662,7 +480,7 @@ namespace Sawczyn.Sequencer
 			/// Called by the base ConnectAction class to determine if the given shapes can be connected.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder FlowBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder FlowElementsCallCallablesBuilder.
 			/// </remarks>
 			public override bool CanCreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, ref string connectionWarning)
 			{
@@ -688,11 +506,11 @@ namespace Sawczyn.Sequencer
 				{				
 					if(targetShapeElement == null)
 					{
-						return FlowBuilder.CanAcceptSource(sourceElement);
+						return FlowElementsCallCallablesBuilder.CanAcceptSource(sourceElement);
 					}
 					else
 					{				
-						return FlowBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
+						return FlowElementsCallCallablesBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
 					}
 				}
 				else
@@ -717,7 +535,7 @@ namespace Sawczyn.Sequencer
 			/// Called by the base ConnectAction class to create the underlying relationship.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder FlowBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder FlowElementsCallCallablesBuilder.
 			/// </remarks>
 			public override void CreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, DslDiagrams::PaintFeedbackArgs paintFeedbackArgs)
 			{
@@ -731,30 +549,30 @@ namespace Sawczyn.Sequencer
 				if(sourceElement == null) sourceElement = sourceShapeElement;
 				DslModeling::ModelElement targetElement = targetShapeElement.ModelElement;
 				if(targetElement == null) targetElement = targetShapeElement;
-				FlowBuilder.Connect(sourceElement, targetElement);
+				FlowElementsCallCallablesBuilder.Connect(sourceElement, targetElement);
 			}
 		}
 		
-		private partial class MethodCallConnectionType : MethodCallConnectionTypeBase
+		private partial class FlowConnectionType : FlowConnectionTypeBase
 		{
 			/// <summary>
-			/// Constructs a new the MethodCallConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the FlowConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			public MethodCallConnectionType() : base() {}
+			public FlowConnectionType() : base() {}
 		}
 	}
  	
  	/// <summary>
 	/// Handles interaction between the ConnectionBuilder and the corresponding ConnectionTool.
 	/// </summary>
-	internal partial class CommentConnectorConnectAction : DslDiagrams::ConnectAction
+	internal partial class CommentSubjectsConnectAction : DslDiagrams::ConnectAction
 	{
 		private DslDiagrams::ConnectionType[] connectionTypes;
 		
 		/// <summary>
-		/// Constructs a new CommentConnectorConnectAction for the given Diagram.
+		/// Constructs a new CommentSubjectsConnectAction for the given Diagram.
 		/// </summary>
-		public CommentConnectorConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
+		public CommentSubjectsConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
 		{
 		}
 		
@@ -784,24 +602,24 @@ namespace Sawczyn.Sequencer
 		
 		
 		/// <summary>
-		/// Returns the CommentConnectorConnectionType associated with this action.
+		/// Returns the CommentSubjectsConnectionType associated with this action.
 		/// </summary>
 		protected override DslDiagrams::ConnectionType[] GetConnectionTypes(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement)
 		{
 			if(this.connectionTypes == null)
 			{
-				this.connectionTypes = new DslDiagrams::ConnectionType[] { new CommentConnectorConnectionType() };
+				this.connectionTypes = new DslDiagrams::ConnectionType[] { new CommentSubjectsConnectionType() };
 			}
 			
 			return this.connectionTypes;
 		}
 		
-		private partial class CommentConnectorConnectionTypeBase : DslDiagrams::ConnectionType
+		private partial class CommentSubjectsConnectionTypeBase : DslDiagrams::ConnectionType
 		{
 			/// <summary>
-			/// Constructs a new the CommentConnectorConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the CommentSubjectsConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			protected CommentConnectorConnectionTypeBase() : base() {}
+			protected CommentSubjectsConnectionTypeBase() : base() {}
 			
 			private static DslDiagrams::ShapeElement RemovePassThroughShapes(DslDiagrams::ShapeElement shape)
 			{
@@ -894,12 +712,12 @@ namespace Sawczyn.Sequencer
 			}
 		}
 		
-		private partial class CommentConnectorConnectionType : CommentConnectorConnectionTypeBase
+		private partial class CommentSubjectsConnectionType : CommentSubjectsConnectionTypeBase
 		{
 			/// <summary>
-			/// Constructs a new the CommentConnectorConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the CommentSubjectsConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			public CommentConnectorConnectionType() : base() {}
+			public CommentSubjectsConnectionType() : base() {}
 		}
 	}
 }

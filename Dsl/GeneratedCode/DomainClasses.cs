@@ -12,232 +12,22 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace Sawczyn.Sequencer
 {
 	/// <summary>
-	/// DomainClass NamedElement
-	/// Overall base class that provides every element with a Name property which acts
-	/// as its MonikerKey for serialization.
-	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.NamedElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.NamedElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
-	[DslModeling::DomainObjectId("30e6ce39-1e74-4c94-8cf1-a8af7b4af056")]
-	public abstract partial class NamedElement : DslModeling::ModelElement
-	{
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// NamedElement domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x30e6ce39, 0x1e74, 0x4c94, 0x8c, 0xf1, 0xa8, 0xaf, 0x7b, 0x4a, 0xf0, 0x56);
-		/// <summary>
-		/// Constructor.
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		protected NamedElement(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Name domain property code
-		
-		/// <summary>
-		/// Name domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0xb558d316, 0xce43, 0x412d, 0x86, 0x67, 0xd8, 0x45, 0xec, 0xb0, 0x41, 0x95);
-		
-		/// <summary>
-		/// Storage for Name
-		/// </summary>
-		private global::System.String namePropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Name domain property.
-		/// Description for Sawczyn.Sequencer.NamedElement.Name
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.NamedElement/Name.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.NamedElement/Name.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue("")]
-		[DslModeling::ElementName]
-		[DslModeling::DomainObjectId("b558d316-ce43-412d-8667-d845ecb04195")]
-		public global::System.String Name
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return namePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				NamePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the NamedElement.Name domain property.
-		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<NamedElement, global::System.String>
-		{
-			private NamePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the NamedElement.Name domain property value handler.
-			/// </summary>
-			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the NamedElement.Name domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return NameDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(NamedElement element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.namePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(NamedElement element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.namePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region Description domain property code
-		
-		/// <summary>
-		/// Description domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid DescriptionDomainPropertyId = new global::System.Guid(0x9865151d, 0xe41c, 0x4044, 0xb3, 0xc3, 0x45, 0xaa, 0x13, 0x73, 0x8d, 0x4e);
-		
-		/// <summary>
-		/// Storage for Description
-		/// </summary>
-		private global::System.String descriptionPropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Description domain property.
-		/// Summary comments
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.NamedElement/Description.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.NamedElement/Description.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue("")]
-		[DslModeling::DomainObjectId("9865151d-e41c-4044-b3c3-45aa13738d4e")]
-		public global::System.String Description
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return descriptionPropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DescriptionPropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the NamedElement.Description domain property.
-		/// </summary>
-		internal sealed partial class DescriptionPropertyHandler : DslModeling::DomainPropertyValueHandler<NamedElement, global::System.String>
-		{
-			private DescriptionPropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the NamedElement.Description domain property value handler.
-			/// </summary>
-			public static readonly DescriptionPropertyHandler Instance = new DescriptionPropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the NamedElement.Description domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return DescriptionDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(NamedElement element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.descriptionPropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(NamedElement element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.descriptionPropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-	}
-}
-namespace Sawczyn.Sequencer
-{
-	/// <summary>
 	/// DomainClass SequenceDiagram
 	/// Root element in which others are embedded.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequenceDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequenceDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("bea83729-130e-4534-bc3c-b88eb7d255bd")]
-	public partial class SequenceDiagram : NamedElement
+	[DslModeling::DomainObjectId("006530fa-ee1b-4661-9948-0603c58ffe0c")]
+	public partial class SequenceDiagram : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// SequenceDiagram domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xbea83729, 0x130e, 0x4534, 0xbc, 0x3c, 0xb8, 0x8e, 0xb7, 0xd2, 0x55, 0xbd);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x006530fa, 0xee1b, 0x4661, 0x99, 0x48, 0x06, 0x03, 0xc5, 0x8f, 0xfe, 0x0c);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -308,12 +98,12 @@ namespace Sawczyn.Sequencer
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Class.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Comment.DomainClassId)) 
 				{
 					return true;
 				}
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Comment.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Class.DomainClassId)) 
 				{
 					return true;
 				}
@@ -342,20 +132,20 @@ namespace Sawczyn.Sequencer
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Sawczyn.Sequencer.Class sourceClass1 = sourceElement as global::Sawczyn.Sequencer.Class;
-			if (sourceClass1 != null)
+			global::Sawczyn.Sequencer.Comment sourceComment1 = sourceElement as global::Sawczyn.Sequencer.Comment;
+			if (sourceComment1 != null)
 			{
-				// Create link for path SequenceDiagramHasClasses.Classed
-				this.Classed.Add(sourceClass1);
+				// Create link for path SequenceDiagramHasComments.Comments
+				this.Comments.Add(sourceComment1);
 
 				return;
 			}
 				
-			global::Sawczyn.Sequencer.Comment sourceComment2 = sourceElement as global::Sawczyn.Sequencer.Comment;
-			if (sourceComment2 != null)
+			global::Sawczyn.Sequencer.Class sourceClass2 = sourceElement as global::Sawczyn.Sequencer.Class;
+			if (sourceClass2 != null)
 			{
-				// Create link for path SequenceDiagramHasComments.Comments
-				this.Comments.Add(sourceComment2);
+				// Create link for path SequenceDiagramHasClasses.Classed
+				this.Classed.Add(sourceClass2);
 
 				return;
 			}
@@ -382,29 +172,29 @@ namespace Sawczyn.Sequencer
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Sawczyn.Sequencer.Class sourceClass1 = sourceElement as global::Sawczyn.Sequencer.Class;
-			if (sourceClass1 != null)
+			global::Sawczyn.Sequencer.Comment sourceComment1 = sourceElement as global::Sawczyn.Sequencer.Comment;
+			if (sourceComment1 != null)
 			{
-				// Delete link for path SequenceDiagramHasClasses.Classed
+				// Delete link for path SequenceDiagramHasComments.Comments
 				
-				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasClasses.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)this, sourceClass1))
+				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasComments.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)this, sourceComment1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasClasses.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasClasses.ClassDomainRoleId);
+					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasComments.CommentDomainRoleId);
 				}
 
 				return;
 			}
 				
-			global::Sawczyn.Sequencer.Comment sourceComment2 = sourceElement as global::Sawczyn.Sequencer.Comment;
-			if (sourceComment2 != null)
+			global::Sawczyn.Sequencer.Class sourceClass2 = sourceElement as global::Sawczyn.Sequencer.Class;
+			if (sourceClass2 != null)
 			{
-				// Delete link for path SequenceDiagramHasComments.Comments
+				// Delete link for path SequenceDiagramHasClasses.Classed
 				
-				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasComments.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)this, sourceComment2))
+				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasClasses.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)this, sourceClass2))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasComments.CommentDomainRoleId);
+					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasClasses.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasClasses.ClassDomainRoleId);
 				}
 
 				return;
@@ -421,19 +211,19 @@ namespace Sawczyn.Sequencer
 	/// DomainClass FlowElement
 	/// Elements that can be connected by Flow links.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.FlowElement.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.FlowElement.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("f14909b9-fa97-4696-9ea0-92a45c6915f7")]
-	public abstract partial class FlowElement : NamedElement
+	[DslModeling::DomainObjectId("6b2534e3-0986-43fa-b1b9-95d61b5fe940")]
+	public abstract partial class FlowElement : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// FlowElement domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf14909b9, 0xfa97, 0x4696, 0x9e, 0xa0, 0x92, 0xa4, 0x5c, 0x69, 0x15, 0xf7);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x6b2534e3, 0x0986, 0x43fa, 0xb1, 0xb9, 0x95, 0xd6, 0x1b, 0x5f, 0xe9, 0x40);
 		/// <summary>
 		/// Constructor.
 		/// </summary>
@@ -442,36 +232,6 @@ namespace Sawczyn.Sequencer
 		protected FlowElement(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
-		}
-		#endregion
-		#region FlowTo opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of FlowTo.
-		/// Description for Sawczyn.Sequencer.Flow.FlowFrom
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FlowElement> FlowTo
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(global::Sawczyn.Sequencer.Flow.FlowFromDomainRoleId);
-			}
-		}
-		#endregion
-		#region FlowFrom opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of FlowFrom.
-		/// Description for Sawczyn.Sequencer.Flow.FlowTo
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FlowElement> FlowFrom
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(global::Sawczyn.Sequencer.Flow.FlowToDomainRoleId);
-			}
 		}
 		#endregion
 		#region Comments opposite domain role accessor
@@ -505,6 +265,21 @@ namespace Sawczyn.Sequencer
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Sawczyn.Sequencer.ClassHasFlowElements.FlowElementDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region CallTarget opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of CallTarget.
+		/// Description for Sawczyn.Sequencer.FlowElementsCallCallables.FlowElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Callable> CallTarget
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(global::Sawczyn.Sequencer.FlowElementsCallCallables.FlowElementDomainRoleId);
 			}
 		}
 		#endregion
@@ -634,21 +409,21 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainClass Method
-	/// Method (function) called in a class
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Method.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Method.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Method.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Method.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("95b21624-2d8b-4c22-a120-62b10c08b936")]
-	public partial class Method : FlowElement
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
+	[DslModeling::DomainObjectId("772402eb-0be4-4f60-b20c-f4de33e1296d")]
+	public partial class Method : Callable
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// Method domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x95b21624, 0x2d8b, 0x4c22, 0xa1, 0x20, 0x62, 0xb1, 0x0c, 0x08, 0xb9, 0x36);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x772402eb, 0x0be4, 0x4f60, 0xb2, 0x0c, 0xf4, 0xde, 0x33, 0xe1, 0x29, 0x6d);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -669,12 +444,101 @@ namespace Sawczyn.Sequencer
 		{
 		}
 		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x5f728af3, 0x5188, 0x4754, 0x9a, 0x4f, 0x8c, 0x2c, 0xb8, 0x42, 0xda, 0xd2);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Sawczyn.Sequencer.Method.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Method/Name.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Method/Name.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("5f728af3-5188-4754-9a4f-8c2cb842dad2")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Method.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<Method, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Method.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Method.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Method element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Method element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region IsStatic domain property code
 		
 		/// <summary>
 		/// IsStatic domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid IsStaticDomainPropertyId = new global::System.Guid(0xebb2fdf9, 0xe7e3, 0x4a38, 0x9c, 0xb1, 0xfe, 0xff, 0x17, 0xa1, 0xb5, 0x78);
+		public static readonly global::System.Guid IsStaticDomainPropertyId = new global::System.Guid(0x3b2436de, 0xe57f, 0x4138, 0x98, 0xc0, 0x54, 0x97, 0xaf, 0x2c, 0x18, 0x11);
 		
 		/// <summary>
 		/// Storage for IsStatic
@@ -685,9 +549,9 @@ namespace Sawczyn.Sequencer
 		/// Gets or sets the value of IsStatic domain property.
 		/// If true, this is a static method
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Method/IsStatic.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Method/IsStatic.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("ebb2fdf9-e7e3-4a38-9cb1-feff17a1b578")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Method/IsStatic.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Method/IsStatic.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("3b2436de-e57f-4138-98c0-5497af2c1811")]
 		public global::System.Boolean IsStatic
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -763,11 +627,11 @@ namespace Sawczyn.Sequencer
 	/// <summary>
 	/// DomainClass StartPoint
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.StartPoint.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.StartPoint.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.StartPoint.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.StartPoint.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("f272d0ca-5925-46d7-816e-cbcc7bd6e14d")]
+	[DslModeling::DomainObjectId("172e1065-b774-4fe9-a636-b1b826fc02f4")]
 	public partial class StartPoint : FlowElement
 	{
 		#region Constructors, domain class Id
@@ -775,7 +639,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// StartPoint domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf272d0ca, 0x5925, 0x46d7, 0x81, 0x6e, 0xcb, 0xcc, 0x7b, 0xd6, 0xe1, 0x4d);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x172e1065, 0xb774, 0x4fe9, 0xa6, 0x36, 0xb1, 0xb8, 0x26, 0xfc, 0x02, 0xf4);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -802,13 +666,12 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainClass EndPoint
-	/// End of the documented sequence
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.EndPoint.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.EndPoint.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.EndPoint.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.EndPoint.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("dc3df258-1ddd-4aad-8ecd-747ffbab2f8d")]
+	[DslModeling::DomainObjectId("d2517cdc-b6ed-4390-be79-6dbfd058d159")]
 	public partial class EndPoint : FlowElement
 	{
 		#region Constructors, domain class Id
@@ -816,7 +679,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// EndPoint domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdc3df258, 0x1ddd, 0x4aad, 0x8e, 0xcd, 0x74, 0x7f, 0xfb, 0xab, 0x2f, 0x8d);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xd2517cdc, 0xb6ed, 0x4390, 0xbe, 0x79, 0x6d, 0xbf, 0xd0, 0x58, 0xd1, 0x59);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -843,21 +706,20 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainClass Branch
-	/// Condition branch
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Branch.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Branch.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Branch.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Branch.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("4abaa0ce-6d9f-4498-9ce6-b797c7be3c7b")]
-	public partial class Branch : FlowElement
+	[DslModeling::DomainObjectId("c61b1bda-8b86-4ac9-aa39-b5b62221b45f")]
+	public partial class Branch : Callable
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// Branch domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4abaa0ce, 0x6d9f, 0x4498, 0x9c, 0xe6, 0xb7, 0x97, 0xc7, 0xbe, 0x3c, 0x7b);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc61b1bda, 0x8b86, 0x4ac9, 0xaa, 0x39, 0xb5, 0xb6, 0x22, 0x21, 0xb4, 0x5f);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -878,93 +740,6 @@ namespace Sawczyn.Sequencer
 		{
 		}
 		#endregion
-		#region Condition domain property code
-		
-		/// <summary>
-		/// Condition domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid ConditionDomainPropertyId = new global::System.Guid(0xce581e9b, 0x9748, 0x4d1d, 0xa1, 0xf6, 0x95, 0xb9, 0xe4, 0x91, 0x07, 0xde);
-		
-		/// <summary>
-		/// Storage for Condition
-		/// </summary>
-		private global::System.String conditionPropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Condition domain property.
-		/// Description for Sawczyn.Sequencer.Branch.Condition
-		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Branch/Condition.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Branch/Condition.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainObjectId("ce581e9b-9748-4d1d-a1f6-95b9e49107de")]
-		public global::System.String Condition
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return conditionPropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				ConditionPropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the Branch.Condition domain property.
-		/// </summary>
-		internal sealed partial class ConditionPropertyHandler : DslModeling::DomainPropertyValueHandler<Branch, global::System.String>
-		{
-			private ConditionPropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the Branch.Condition domain property value handler.
-			/// </summary>
-			public static readonly ConditionPropertyHandler Instance = new ConditionPropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the Branch.Condition domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return ConditionDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(Branch element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.conditionPropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(Branch element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.conditionPropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
 	}
 }
 namespace Sawczyn.Sequencer
@@ -972,19 +747,19 @@ namespace Sawczyn.Sequencer
 	/// <summary>
 	/// DomainClass Synchronization
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Synchronization.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Synchronization.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Synchronization.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Synchronization.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("472aff60-370f-4cc4-8871-63fa556ad4f4")]
-	public partial class Synchronization : FlowElement
+	[DslModeling::DomainObjectId("fefab4a8-6905-4882-8bcf-9e7d765e30f7")]
+	public partial class Synchronization : Callable
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// Synchronization domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x472aff60, 0x370f, 0x4cc4, 0x88, 0x71, 0x63, 0xfa, 0x55, 0x6a, 0xd4, 0xf4);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xfefab4a8, 0x6905, 0x4882, 0x8b, 0xcf, 0x9e, 0x7d, 0x76, 0x5e, 0x30, 0xf7);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -1013,11 +788,11 @@ namespace Sawczyn.Sequencer
 	/// DomainClass Comment
 	/// Can be attached to any task flow element.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Comment.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Comment.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("2edf8064-010c-4ba1-84a1-a0be29c6096b")]
+	[DslModeling::DomainObjectId("70392b8c-b46f-41a6-95e0-f964b3346ac6")]
 	public partial class Comment : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
@@ -1025,7 +800,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Comment domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2edf8064, 0x010c, 0x4ba1, 0x84, 0xa1, 0xa0, 0xbe, 0x29, 0xc6, 0x09, 0x6b);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x70392b8c, 0xb46f, 0x41a6, 0x95, 0xe0, 0xf9, 0x64, 0xb3, 0x34, 0x6a, 0xc6);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -1051,7 +826,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Text domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid TextDomainPropertyId = new global::System.Guid(0x3ab9bbf1, 0x0881, 0x4606, 0xaa, 0x1e, 0xd7, 0x8b, 0x13, 0x15, 0x00, 0x77);
+		public static readonly global::System.Guid TextDomainPropertyId = new global::System.Guid(0xa1f90568, 0x183f, 0x4600, 0xab, 0x87, 0x91, 0x6e, 0x09, 0xf9, 0x16, 0xff);
 		
 		/// <summary>
 		/// Storage for Text
@@ -1061,10 +836,10 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// Gets or sets the value of Text domain property.
 		/// </summary>
-		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Comment/Text.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Comment/Text.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Comment/Text.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Comment/Text.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		[global::System.ComponentModel.DefaultValue("")]
-		[DslModeling::DomainObjectId("3ab9bbf1-0881-4606-aa1e-d78b13150077")]
+		[DslModeling::DomainObjectId("a1f90568-183f-4600-ab87-916e09f916ff")]
 		public global::System.String Text
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -1175,19 +950,20 @@ namespace Sawczyn.Sequencer
 	/// DomainClass Class
 	/// Represented by a swim lane on the diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Class.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Class.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("193dad63-b4e8-4fed-a174-5775eeeb7a7f")]
-	public partial class Class : NamedElement
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
+	[DslModeling::DomainObjectId("03d47fa2-49ec-4bdc-966a-f3fd9a2ff69f")]
+	public partial class Class : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// Class domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x193dad63, 0xb4e8, 0x4fed, 0xa1, 0x74, 0x57, 0x75, 0xee, 0xeb, 0x7a, 0x7f);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x03d47fa2, 0x49ec, 0x4bdc, 0x96, 0x6a, 0xf3, 0xfd, 0x9a, 0x2f, 0xf6, 0x9f);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -1207,6 +983,182 @@ namespace Sawczyn.Sequencer
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x47607c73, 0xb450, 0x4318, 0xae, 0x2d, 0x22, 0xf0, 0xc6, 0x3a, 0x9e, 0x9c);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Sawczyn.Sequencer.Class.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Class/Name.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Class/Name.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue("")]
+		[DslModeling::ElementName]
+		[DslModeling::DomainObjectId("47607c73-b450-4318-ae2d-22f0c63a9e9c")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Class.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<Class, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Class.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Class.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Class element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Class element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Assembly domain property code
+		
+		/// <summary>
+		/// Assembly domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid AssemblyDomainPropertyId = new global::System.Guid(0x8b255d01, 0x7e68, 0x4b0a, 0x9a, 0xf2, 0xd5, 0x47, 0xbe, 0x9b, 0xeb, 0x79);
+		
+		/// <summary>
+		/// Storage for Assembly
+		/// </summary>
+		private global::System.String assemblyPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Assembly domain property.
+		/// Description for Sawczyn.Sequencer.Class.Assembly
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Class/Assembly.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Class/Assembly.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("8b255d01-7e68-4b0a-9af2-d547be9beb79")]
+		public global::System.String Assembly
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return assemblyPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				AssemblyPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Class.Assembly domain property.
+		/// </summary>
+		internal sealed partial class AssemblyPropertyHandler : DslModeling::DomainPropertyValueHandler<Class, global::System.String>
+		{
+			private AssemblyPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Class.Assembly domain property value handler.
+			/// </summary>
+			public static readonly AssemblyPropertyHandler Instance = new AssemblyPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Class.Assembly domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return AssemblyDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Class element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.assemblyPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Class element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.assemblyPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region SequenceDiagram opposite domain role accessor
 		/// <summary>
@@ -1262,17 +1214,17 @@ namespace Sawczyn.Sequencer
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Comment.DomainClassId)) 
+				{
+					return true;
+				}
+				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Class.DomainClassId)) 
 				{
 					return true;
 				}
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.FlowElement.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Sawczyn.Sequencer.Comment.DomainClassId)) 
 				{
 					return true;
 				}
@@ -1301,35 +1253,35 @@ namespace Sawczyn.Sequencer
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Sawczyn.Sequencer.Class sourceClass1 = sourceElement as global::Sawczyn.Sequencer.Class;
-			if (sourceClass1 != null)
-			{
-				// Create link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed
-						// Segments 0 and 1
-						global::Sawczyn.Sequencer.SequenceDiagram classHost = this.SequenceDiagram;
-						if ( classHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed'.");
-				classHost.Classed.Add(sourceClass1);
-
-				return;
-			}
-				
-			global::Sawczyn.Sequencer.FlowElement sourceFlowElement2 = sourceElement as global::Sawczyn.Sequencer.FlowElement;
-			if (sourceFlowElement2 != null)
-			{
-				// Create link for path ClassHasFlowElements.FlowElements
-				this.FlowElements.Add(sourceFlowElement2);
-
-				return;
-			}
-				
-			global::Sawczyn.Sequencer.Comment sourceComment3 = sourceElement as global::Sawczyn.Sequencer.Comment;
-			if (sourceComment3 != null)
+			global::Sawczyn.Sequencer.Comment sourceComment1 = sourceElement as global::Sawczyn.Sequencer.Comment;
+			if (sourceComment1 != null)
 			{
 				// Create link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments
 						// Segments 0 and 1
 						global::Sawczyn.Sequencer.SequenceDiagram commentHost = this.SequenceDiagram;
 						if ( commentHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments'.");
-				commentHost.Comments.Add(sourceComment3);
+				commentHost.Comments.Add(sourceComment1);
+
+				return;
+			}
+				
+			global::Sawczyn.Sequencer.Class sourceClass2 = sourceElement as global::Sawczyn.Sequencer.Class;
+			if (sourceClass2 != null)
+			{
+				// Create link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed
+						// Segments 0 and 1
+						global::Sawczyn.Sequencer.SequenceDiagram classHost = this.SequenceDiagram;
+						if ( classHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed'.");
+				classHost.Classed.Add(sourceClass2);
+
+				return;
+			}
+				
+			global::Sawczyn.Sequencer.FlowElement sourceFlowElement3 = sourceElement as global::Sawczyn.Sequencer.FlowElement;
+			if (sourceFlowElement3 != null)
+			{
+				// Create link for path ClassHasFlowElements.FlowElements
+				this.FlowElements.Add(sourceFlowElement3);
 
 				return;
 			}
@@ -1356,15 +1308,32 @@ namespace Sawczyn.Sequencer
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Sawczyn.Sequencer.Class sourceClass1 = sourceElement as global::Sawczyn.Sequencer.Class;
-			if (sourceClass1 != null)
+			global::Sawczyn.Sequencer.Comment sourceComment1 = sourceElement as global::Sawczyn.Sequencer.Comment;
+			if (sourceComment1 != null)
+			{
+				// Delete link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments
+					// Segments 0 and 1
+					global::Sawczyn.Sequencer.SequenceDiagram commentHost = this.SequenceDiagram;
+					if ( commentHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments'.");
+				
+				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasComments.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)commentHost, sourceComment1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasComments.CommentDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Sawczyn.Sequencer.Class sourceClass2 = sourceElement as global::Sawczyn.Sequencer.Class;
+			if (sourceClass2 != null)
 			{
 				// Delete link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed
 					// Segments 0 and 1
 					global::Sawczyn.Sequencer.SequenceDiagram classHost = this.SequenceDiagram;
 					if ( classHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/.Classed'.");
 				
-				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasClasses.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)classHost, sourceClass1))
+				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasClasses.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)classHost, sourceClass2))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasClasses.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasClasses.ClassDomainRoleId);
@@ -1373,12 +1342,12 @@ namespace Sawczyn.Sequencer
 				return;
 			}
 				
-			global::Sawczyn.Sequencer.FlowElement sourceFlowElement2 = sourceElement as global::Sawczyn.Sequencer.FlowElement;
-			if (sourceFlowElement2 != null)
+			global::Sawczyn.Sequencer.FlowElement sourceFlowElement3 = sourceElement as global::Sawczyn.Sequencer.FlowElement;
+			if (sourceFlowElement3 != null)
 			{
 				// Delete link for path ClassHasFlowElements.FlowElements
 				
-				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.ClassHasFlowElements.GetLinks((global::Sawczyn.Sequencer.Class)this, sourceFlowElement2))
+				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.ClassHasFlowElements.GetLinks((global::Sawczyn.Sequencer.Class)this, sourceFlowElement3))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Sawczyn.Sequencer.ClassHasFlowElements.ClassDomainRoleId, global::Sawczyn.Sequencer.ClassHasFlowElements.FlowElementDomainRoleId);
@@ -1386,25 +1355,258 @@ namespace Sawczyn.Sequencer
 
 				return;
 			}
-				
-			global::Sawczyn.Sequencer.Comment sourceComment3 = sourceElement as global::Sawczyn.Sequencer.Comment;
-			if (sourceComment3 != null)
-			{
-				// Delete link for path SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments
-					// Segments 0 and 1
-					global::Sawczyn.Sequencer.SequenceDiagram commentHost = this.SequenceDiagram;
-					if ( commentHost == null ) throw new global::System.InvalidOperationException("Null encountered while traversing path 'SequenceDiagramHasClasses.SequenceDiagram/!SequenceDiagram/SequenceDiagramHasComments.Comments'.");
-				
-				foreach (DslModeling::ElementLink link in global::Sawczyn.Sequencer.SequenceDiagramHasComments.GetLinks((global::Sawczyn.Sequencer.SequenceDiagram)commentHost, sourceComment3))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Sawczyn.Sequencer.SequenceDiagramHasComments.SequenceDiagramDomainRoleId, global::Sawczyn.Sequencer.SequenceDiagramHasComments.CommentDomainRoleId);
-				}
-
-				return;
-			}
 			// Fall through to base class if this class hasn't handled the unmerge.
 			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace Sawczyn.Sequencer
+{
+	/// <summary>
+	/// DomainClass Callable
+	/// Description for Sawczyn.Sequencer.Callable
+	/// </summary>
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Callable.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Callable.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("20320173-a436-41a3-a161-e0e99e26ded6")]
+	public abstract partial class Callable : FlowElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Callable domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x20320173, 0xa436, 0x41a3, 0xa1, 0x61, 0xe0, 0xe9, 0x9e, 0x26, 0xde, 0xd6);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected Callable(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ReturnType domain property code
+		
+		/// <summary>
+		/// ReturnType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ReturnTypeDomainPropertyId = new global::System.Guid(0x595474ae, 0xd29b, 0x457b, 0xa5, 0x72, 0xc4, 0xa8, 0x85, 0x4d, 0xa9, 0x9a);
+		
+		/// <summary>
+		/// Storage for ReturnType
+		/// </summary>
+		private global::System.String returnTypePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ReturnType domain property.
+		/// Description for Sawczyn.Sequencer.Callable.Return Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Callable/ReturnType.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Callable/ReturnType.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("595474ae-d29b-457b-a572-c4a8854da99a")]
+		public global::System.String ReturnType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return returnTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ReturnTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Callable.ReturnType domain property.
+		/// </summary>
+		internal sealed partial class ReturnTypePropertyHandler : DslModeling::DomainPropertyValueHandler<Callable, global::System.String>
+		{
+			private ReturnTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Callable.ReturnType domain property value handler.
+			/// </summary>
+			public static readonly ReturnTypePropertyHandler Instance = new ReturnTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Callable.ReturnType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ReturnTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Callable element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.returnTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Callable element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.returnTypePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Condition domain property code
+		
+		/// <summary>
+		/// Condition domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ConditionDomainPropertyId = new global::System.Guid(0x637b74b1, 0xc6f2, 0x4219, 0x87, 0xfb, 0xdb, 0xf6, 0xa3, 0xce, 0xe6, 0xa9);
+		
+		/// <summary>
+		/// Storage for Condition
+		/// </summary>
+		private global::System.String conditionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Condition domain property.
+		/// Description for Sawczyn.Sequencer.Callable.Condition
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Callable/Condition.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.Callable/Condition.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("637b74b1-c6f2-4219-87fb-dbf6a3cee6a9")]
+		public global::System.String Condition
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return conditionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ConditionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Callable.Condition domain property.
+		/// </summary>
+		internal sealed partial class ConditionPropertyHandler : DslModeling::DomainPropertyValueHandler<Callable, global::System.String>
+		{
+			private ConditionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Callable.Condition domain property value handler.
+			/// </summary>
+			public static readonly ConditionPropertyHandler Instance = new ConditionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Callable.Condition domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ConditionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Callable element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.conditionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Callable element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.conditionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region CallSource opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of CallSource.
+		/// Description for Sawczyn.Sequencer.FlowElementsCallCallables.Callable
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FlowElement> CallSource
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FlowElement>, FlowElement>(global::Sawczyn.Sequencer.FlowElementsCallCallables.CallableDomainRoleId);
+			}
+		}
+		#endregion
+		#region ResultTarget opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ResultTarget.
+		/// Description for Sawczyn.Sequencer.CallablesReturnResults.SourceCallable
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Callable> ResultTarget
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(global::Sawczyn.Sequencer.CallablesReturnResults.SourceCallableDomainRoleId);
+			}
+		}
+		#endregion
+		#region ResultSource opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ResultSource.
+		/// Description for Sawczyn.Sequencer.CallablesReturnResults.TargetCallable
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Callable> ResultSource
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Callable>, Callable>(global::Sawczyn.Sequencer.CallablesReturnResults.TargetCallableDomainRoleId);
+			}
 		}
 		#endregion
 	}

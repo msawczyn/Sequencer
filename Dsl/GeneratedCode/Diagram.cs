@@ -11,20 +11,20 @@ using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 
-[module: global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Scope = "type", Target = "Sawczyn.Sequencer.Diagram")]
+[module: global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Scope = "type", Target = "Sawczyn.Sequencer.SequencerDiagram")]
 
 namespace Sawczyn.Sequencer
 {
 	/// <summary>
-	/// DomainClass Diagram
-	/// Sequende diagram
+	/// DomainClass SequencerDiagram
+	/// Description for Sawczyn.Sequencer.SequencerDiagram
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.Diagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.Diagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequencerDiagram.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequencerDiagram.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Sawczyn.Sequencer.SequencerDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("b68e6c42-4eb9-46a7-af2d-9e43de461561")]
-	public partial class Diagram : DslDiagrams::Diagram
+	[DslModeling::DomainObjectId("6fb004cc-f0ce-4312-92e4-c821ab8a5330")]
+	public partial class SequencerDiagram : DslDiagrams::Diagram
 	{
 		#region Diagram boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -73,6 +73,33 @@ namespace Sawczyn.Sequencer
 				return toolboxFilters;
 			}
 		}
+		#endregion
+		#region Custom storage for shape properties that appear in the property grid
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private global::System.Drawing.Color GetFillColorValue()
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.DiagramBackground);
+			if(settings != null && settings.IsOverridden(DslDiagrams::BrushSettingsFlags.Color))
+			{
+				return settings.Color;
+			}
+			return global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White);
+		}
+		
+		/// <summary>
+		/// Custom storage for domain property FillColor.
+		/// </summary>
+		private void SetFillColorValue(global::System.Drawing.Color newValue)
+		{
+			DslDiagrams::BrushSettings settings = this.StyleSet.GetOverriddenBrushSettings(DslDiagrams::DiagramBrushes.DiagramBackground);
+			if(settings == null) settings = new DslDiagrams::BrushSettings();
+			settings.Color = newValue;
+			this.StyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.DiagramBackground, settings);
+			this.Invalidate();
+		}
+		
 		#endregion
 		#region Swimlane support
 		
@@ -227,6 +254,12 @@ namespace Sawczyn.Sequencer
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Sawczyn.Sequencer.Synchronization)
+			{
+				global::Sawczyn.Sequencer.SyncBarShape newShape = new global::Sawczyn.Sequencer.SyncBarShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Sawczyn.Sequencer.EndPoint)
 			{
 				global::Sawczyn.Sequencer.EndShape newShape = new global::Sawczyn.Sequencer.EndShape(this.Partition);
@@ -239,9 +272,9 @@ namespace Sawczyn.Sequencer
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Sawczyn.Sequencer.Synchronization)
+			if(element is global::Sawczyn.Sequencer.Comment)
 			{
-				global::Sawczyn.Sequencer.SyncBarShape newShape = new global::Sawczyn.Sequencer.SyncBarShape(this.Partition);
+				global::Sawczyn.Sequencer.CommentBoxShape newShape = new global::Sawczyn.Sequencer.CommentBoxShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -251,20 +284,19 @@ namespace Sawczyn.Sequencer
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Sawczyn.Sequencer.Comment)
-			{
-				global::Sawczyn.Sequencer.CommentBoxShape newShape = new global::Sawczyn.Sequencer.CommentBoxShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Sawczyn.Sequencer.Flow)
-			{
-				global::Sawczyn.Sequencer.FlowConnector newShape = new global::Sawczyn.Sequencer.FlowConnector(this.Partition);
-				return newShape;
-			}
 			if(element is global::Sawczyn.Sequencer.CommentReferencesSubjects)
 			{
 				global::Sawczyn.Sequencer.CommentConnector newShape = new global::Sawczyn.Sequencer.CommentConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::Sawczyn.Sequencer.FlowElementsCallCallables)
+			{
+				global::Sawczyn.Sequencer.CallConnector newShape = new global::Sawczyn.Sequencer.CallConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::Sawczyn.Sequencer.CallablesReturnResults)
+			{
+				global::Sawczyn.Sequencer.ResultConnector newShape = new global::Sawczyn.Sequencer.ResultConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -281,6 +313,8 @@ namespace Sawczyn.Sequencer
 			global::Sawczyn.Sequencer.MethodShape.DecoratorsInitialized += MethodShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Sawczyn.Sequencer.CommentBoxShape.DecoratorsInitialized += CommentBoxShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Sawczyn.Sequencer.SwimLane.DecoratorsInitialized += SwimLaneDecoratorMap.OnDecoratorsInitialized;
+			global::Sawczyn.Sequencer.CallConnector.DecoratorsInitialized += CallConnectorDecoratorMap.OnDecoratorsInitialized;
+			global::Sawczyn.Sequencer.ResultConnector.DecoratorsInitialized += ResultConnectorDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -296,7 +330,7 @@ namespace Sawczyn.Sequencer
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.NamedElement.NameDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.Method.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
@@ -332,8 +366,125 @@ namespace Sawczyn.Sequencer
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.NamedElement.NameDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.Class.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ClassName").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.Class.AssemblyDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "AssemblyName").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for CallConnector.
+		/// </summary>
+		internal static partial class CallConnectorDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for CallConnector.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.Callable.ConditionDomainPropertyId);
+				propertyInfo.PresentationDomainNavigator = new DslDiagrams::PresentationDomainNavigator(ConditionPresentationToDomain);
+				propertyInfo.DomainPresentationNavigator = new DslDiagrams::DomainPresentationNavigator(ConditionDomainToPresentation);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Condition").AssociateValueWith(shape.Store, propertyInfo);
+			}
+			public static DslModeling::ModelElement ConditionPresentationToDomain(DslDiagrams::PresentationElement presentation)
+			{
+				global::Sawczyn.Sequencer.FlowElementsCallCallables modelElement = presentation.ModelElement as global::Sawczyn.Sequencer.FlowElementsCallCallables;
+				if(modelElement != null)
+				{
+					// Segment 0
+					global::Sawczyn.Sequencer.Callable mappedElement = modelElement.Callable;
+					if ( mappedElement == null ) return null;
+					return mappedElement;
+				}
+				return null;
+			}
+			public static global::System.Collections.Generic.ICollection<DslDiagrams::PresentationElement> ConditionDomainToPresentation(DslModeling::ModelElement modelElement)
+			{
+				global::Sawczyn.Sequencer.Callable typedElement = modelElement as global::Sawczyn.Sequencer.Callable;
+				if(typedElement != null)
+				{
+					if(typedElement.IsDeleted)
+					{
+						// We cannot navigate back along a path containing deleted elements, best we can do is return the diagram
+						// to ensure all visible shapes are invalidated.
+						global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.SequencerDiagram> diagramCollection = modelElement.Store.ElementDirectory.FindElements<global::Sawczyn.Sequencer.SequencerDiagram>(true);
+						global::Sawczyn.Sequencer.SequencerDiagram[] diagramArray = new global::Sawczyn.Sequencer.SequencerDiagram[diagramCollection.Count];
+						diagramCollection.CopyTo(diagramArray, 0);
+						return diagramArray;
+					}
+					// Segment 0
+						global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.FlowElementsCallCallables> mappedElements = global::Sawczyn.Sequencer.FlowElementsCallCallables.GetLinksToCallSource(typedElement);
+					global::System.Collections.Generic.List<DslDiagrams::PresentationElement> presentationList = new global::System.Collections.Generic.List<DslDiagrams::PresentationElement>();
+					foreach(DslModeling::ModelElement mappedElement in mappedElements)
+					{
+						presentationList.AddRange(DslDiagrams::PresentationViewsSubject.GetPresentation(mappedElement));
+					}
+					return presentationList;
+				}
+				return null;
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ResultConnector.
+		/// </summary>
+		internal static partial class ResultConnectorDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ResultConnector.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Sawczyn.Sequencer.Callable.ReturnTypeDomainPropertyId);
+				propertyInfo.PresentationDomainNavigator = new DslDiagrams::PresentationDomainNavigator(ReturnTypePresentationToDomain);
+				propertyInfo.DomainPresentationNavigator = new DslDiagrams::DomainPresentationNavigator(ReturnTypeDomainToPresentation);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "ReturnType").AssociateValueWith(shape.Store, propertyInfo);
+			}
+			public static DslModeling::ModelElement ReturnTypePresentationToDomain(DslDiagrams::PresentationElement presentation)
+			{
+				global::Sawczyn.Sequencer.CallablesReturnResults modelElement = presentation.ModelElement as global::Sawczyn.Sequencer.CallablesReturnResults;
+				if(modelElement != null)
+				{
+					// Segment 0
+					global::Sawczyn.Sequencer.Callable mappedElement = modelElement.TargetCallable;
+					if ( mappedElement == null ) return null;
+					return mappedElement;
+				}
+				return null;
+			}
+			public static global::System.Collections.Generic.ICollection<DslDiagrams::PresentationElement> ReturnTypeDomainToPresentation(DslModeling::ModelElement modelElement)
+			{
+				global::Sawczyn.Sequencer.Callable typedElement = modelElement as global::Sawczyn.Sequencer.Callable;
+				if(typedElement != null)
+				{
+					if(typedElement.IsDeleted)
+					{
+						// We cannot navigate back along a path containing deleted elements, best we can do is return the diagram
+						// to ensure all visible shapes are invalidated.
+						global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.SequencerDiagram> diagramCollection = modelElement.Store.ElementDirectory.FindElements<global::Sawczyn.Sequencer.SequencerDiagram>(true);
+						global::Sawczyn.Sequencer.SequencerDiagram[] diagramArray = new global::Sawczyn.Sequencer.SequencerDiagram[diagramCollection.Count];
+						diagramCollection.CopyTo(diagramArray, 0);
+						return diagramArray;
+					}
+					// Segment 0
+						global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.CallablesReturnResults> mappedElements = global::Sawczyn.Sequencer.CallablesReturnResults.GetLinksToResultSource(typedElement);
+					global::System.Collections.Generic.List<DslDiagrams::PresentationElement> presentationList = new global::System.Collections.Generic.List<DslDiagrams::PresentationElement>();
+					foreach(DslModeling::ModelElement mappedElement in mappedElements)
+					{
+						presentationList.AddRange(DslDiagrams::PresentationViewsSubject.GetPresentation(mappedElement));
+					}
+					return presentationList;
+				}
+				return null;
 			}
 		}
 		
@@ -341,8 +492,8 @@ namespace Sawczyn.Sequencer
 		
 		#region Connect actions
 		private bool changingMouseAction;
-		private global::Sawczyn.Sequencer.MethodCallConnectAction methodCallConnectAction;
-		private global::Sawczyn.Sequencer.CommentConnectorConnectAction commentConnectorConnectAction;
+		private global::Sawczyn.Sequencer.FlowConnectAction flowConnectAction;
+		private global::Sawczyn.Sequencer.CommentSubjectsConnectAction commentSubjectsConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -365,23 +516,23 @@ namespace Sawczyn.Sequencer
 			if(activeView != null)
 			{
 				DslDiagrams::MouseAction action = null;
-				if (SelectedToolboxItemSupportsFilterString(activeView, global::Sawczyn.Sequencer.SequencerToolboxHelper.MethodCallFilterString))
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::Sawczyn.Sequencer.SequencerToolboxHelper.FlowFilterString))
 				{
-					if (this.methodCallConnectAction == null)
+					if (this.flowConnectAction == null)
 					{
-						this.methodCallConnectAction = new global::Sawczyn.Sequencer.MethodCallConnectAction(this);
-						this.methodCallConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+						this.flowConnectAction = new global::Sawczyn.Sequencer.FlowConnectAction(this);
+						this.flowConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
-					action = this.methodCallConnectAction;
+					action = this.flowConnectAction;
 				} 
-				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Sawczyn.Sequencer.SequencerToolboxHelper.CommentConnectorFilterString))
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Sawczyn.Sequencer.SequencerToolboxHelper.CommentSubjectsFilterString))
 				{
-					if (this.commentConnectorConnectAction == null)
+					if (this.commentSubjectsConnectAction == null)
 					{
-						this.commentConnectorConnectAction = new global::Sawczyn.Sequencer.CommentConnectorConnectAction(this);
-						this.commentConnectorConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+						this.commentSubjectsConnectAction = new global::Sawczyn.Sequencer.CommentSubjectsConnectAction(this);
+						this.commentSubjectsConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
-					action = this.commentConnectorConnectAction;
+					action = this.commentSubjectsConnectAction;
 				} 
 				else
 				{
@@ -440,15 +591,15 @@ namespace Sawczyn.Sequencer
 			{
 				if(disposing)
 				{
-					if(this.methodCallConnectAction != null)
+					if(this.flowConnectAction != null)
 					{
-						this.methodCallConnectAction.Dispose();
-						this.methodCallConnectAction = null;
+						this.flowConnectAction.Dispose();
+						this.flowConnectAction = null;
 					}
-					if(this.commentConnectorConnectAction != null)
+					if(this.commentSubjectsConnectAction != null)
 					{
-						this.commentConnectorConnectAction.Dispose();
-						this.commentConnectorConnectAction = null;
+						this.commentSubjectsConnectAction.Dispose();
+						this.commentSubjectsConnectAction = null;
 					}
 				}
 			}
@@ -460,15 +611,15 @@ namespace Sawczyn.Sequencer
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// Diagram domain class Id.
+		/// SequencerDiagram domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb68e6c42, 0x4eb9, 0x46a7, 0xaf, 0x2d, 0x9e, 0x43, 0xde, 0x46, 0x15, 0x61);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x6fb004cc, 0xf0ce, 0x4312, 0x92, 0xe4, 0xc8, 0x21, 0xab, 0x8a, 0x53, 0x30);
 		/// <summary>
 		/// Constructor
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public Diagram(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public SequencerDiagram(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -478,10 +629,99 @@ namespace Sawczyn.Sequencer
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public Diagram(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public SequencerDiagram(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region FillColor domain property code
+		
+		/// <summary>
+		/// FillColor domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FillColorDomainPropertyId = new global::System.Guid(0x192c0154, 0x6473, 0x4142, 0x9d, 0x8c, 0x46, 0x44, 0xa3, 0x7f, 0xd4, 0xba);
+		
+		/// <summary>
+		/// Gets or sets the value of FillColor domain property.
+		/// Description for Sawczyn.Sequencer.SequencerDiagram.Fill Color
+		/// </summary>
+		[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequencerDiagram/FillColor.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequencerDiagram/FillColor.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainProperty(Kind = DslModeling::DomainPropertyKind.CustomStorage)]
+		[DslModeling::DomainObjectId("192c0154-6473-4142-9d8c-4644a37fd4ba")]
+		public global::System.Drawing.Color FillColor
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return FillColorPropertyHandler.Instance.GetValue(this);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FillColorPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the SequencerDiagram.FillColor domain property.
+		/// </summary>
+		internal sealed partial class FillColorPropertyHandler : DslModeling::DomainPropertyValueHandler<SequencerDiagram, global::System.Drawing.Color>
+		{
+			private FillColorPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the SequencerDiagram.FillColor domain property value handler.
+			/// </summary>
+			public static readonly FillColorPropertyHandler Instance = new FillColorPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the SequencerDiagram.FillColor domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FillColorDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Drawing.Color GetValue(SequencerDiagram element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				// There is no storage for FillColor because its Kind is
+				// set to CustomStorage. Please provide the GetFillColorValue()
+				// method on the domain class.
+				return element.GetFillColorValue();
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(SequencerDiagram element, global::System.Drawing.Color newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Drawing.Color oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					// There is no storage for FillColor because its Kind is
+					// set to CustomStorage. Please provide the SetFillColorValue()
+					// method on the domain class.
+					element.SetFillColorValue(newValue);
+					ValueChanged(element, oldValue, GetValue(element));
+				}
+			}
+		}
+		
 		#endregion
 	}
 }
@@ -505,13 +745,14 @@ namespace Sawczyn.Sequencer
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Method), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Branch), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Synchronization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.EndPoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.StartPoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Synchronization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Class), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Flow), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Class), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.FlowElementsCallCallables), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.CallablesReturnResults), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -535,6 +776,10 @@ namespace Sawczyn.Sequencer
 				{
 					parentElement = GetParentForBranch((global::Sawczyn.Sequencer.Branch)childElement);
 				} else
+				if(childElement is global::Sawczyn.Sequencer.Synchronization)
+				{
+					parentElement = GetParentForSynchronization((global::Sawczyn.Sequencer.Synchronization)childElement);
+				} else
 				if(childElement is global::Sawczyn.Sequencer.EndPoint)
 				{
 					parentElement = GetParentForEndPoint((global::Sawczyn.Sequencer.EndPoint)childElement);
@@ -543,17 +788,13 @@ namespace Sawczyn.Sequencer
 				{
 					parentElement = GetParentForStartPoint((global::Sawczyn.Sequencer.StartPoint)childElement);
 				} else
-				if(childElement is global::Sawczyn.Sequencer.Synchronization)
+				if(childElement is global::Sawczyn.Sequencer.Comment)
 				{
-					parentElement = GetParentForSynchronization((global::Sawczyn.Sequencer.Synchronization)childElement);
+					parentElement = GetParentForComment((global::Sawczyn.Sequencer.Comment)childElement);
 				} else
 				if(childElement is global::Sawczyn.Sequencer.Class)
 				{
 					parentElement = GetParentForClass((global::Sawczyn.Sequencer.Class)childElement);
-				} else
-				if(childElement is global::Sawczyn.Sequencer.Comment)
-				{
-					parentElement = GetParentForComment((global::Sawczyn.Sequencer.Comment)childElement);
 				} else
 				{
 					parentElement = null;
@@ -700,10 +941,42 @@ namespace Sawczyn.Sequencer
 		
 	
 		/// <summary>
+		/// A rule which fires when data mapped to outer text decorators has changed,
+		/// so we can update the decorator host's bounds.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Callable), InitiallyDisabled=true)]
+		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
+		{
+			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+			public override void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e)
+			{
+				if(e == null) throw new global::System.ArgumentNullException("e");
+				
+				if (e.DomainProperty.Id == global::Sawczyn.Sequencer.Callable.ConditionDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Sawczyn.Sequencer.CallConnector.FindCallConnectorDecorator("Condition");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Sawczyn.Sequencer.FlowElementsCallCallables.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::Sawczyn.Sequencer.Callable.ReturnTypeDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::Sawczyn.Sequencer.ResultConnector.FindResultConnectorDecorator("ReturnType");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Sawczyn.Sequencer.CallablesReturnResults.DomainClassId);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.Flow), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.FlowElementsCallCallables), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Sawczyn.Sequencer.CallablesReturnResults), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>
@@ -720,7 +993,7 @@ namespace Sawczyn.Sequencer
 					DslDiagrams::BinaryLinkShape linkShape = connectorLink.Presentation as DslDiagrams::BinaryLinkShape;
 					if (linkShape != null)
 					{
-						global::Sawczyn.Sequencer.Diagram diagram = linkShape.Diagram as global::Sawczyn.Sequencer.Diagram;
+						global::Sawczyn.Sequencer.SequencerDiagram diagram = linkShape.Diagram as global::Sawczyn.Sequencer.SequencerDiagram;
 						if (diagram != null)
 						{
 							if (e.NewRolePlayer != null)

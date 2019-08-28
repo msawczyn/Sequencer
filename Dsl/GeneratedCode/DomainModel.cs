@@ -14,15 +14,15 @@ namespace Sawczyn.Sequencer
 {
 	/// <summary>
 	/// DomainModel SequencerDomainModel
-	/// Sequence diagram representing a high level method call flow
+	/// Description for Sawczyn.Sequencer.Sequencer
 	/// </summary>
-	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequencerDomainModel.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequencerDomainModel.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Sawczyn.Sequencer.SequencerDomainModel.DisplayName", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Sawczyn.Sequencer.SequencerDomainModel.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DependsOnDomainModel(typeof(global::Microsoft.VisualStudio.Modeling.CoreDomainModel))]
 	[DslModeling::DependsOnDomainModel(typeof(global::Microsoft.VisualStudio.Modeling.Diagrams.CoreDesignSurfaceDomainModel))]
 	[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-	[DslModeling::DomainObjectId("fd02d429-6bc8-41dc-bb75-9cb2d84780c4")]
+	[DslModeling::DomainObjectId("748f2d08-552f-4b24-8ea4-75fc7ec180fc")]
 	public partial class SequencerDomainModel : DslModeling::DomainModel
 	{
 		#region Constructor, domain model Id
@@ -30,7 +30,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// SequencerDomainModel domain model Id.
 		/// </summary>
-		public static readonly global::System.Guid DomainModelId = new global::System.Guid(0xfd02d429, 0x6bc8, 0x41dc, 0xbb, 0x75, 0x9c, 0xb2, 0xd8, 0x47, 0x80, 0xc4);
+		public static readonly global::System.Guid DomainModelId = new global::System.Guid(0x748f2d08, 0x552f, 0x4b24, 0x8e, 0xa4, 0x75, 0xfc, 0x7e, 0xc1, 0x80, 0xfc);
 	
 		/// <summary>
 		/// Constructor.
@@ -67,7 +67,6 @@ namespace Sawczyn.Sequencer
 		{
 			return new global::System.Type[]
 			{
-				typeof(NamedElement),
 				typeof(SequenceDiagram),
 				typeof(FlowElement),
 				typeof(Method),
@@ -77,14 +76,17 @@ namespace Sawczyn.Sequencer
 				typeof(Synchronization),
 				typeof(Comment),
 				typeof(Class),
-				typeof(Flow),
+				typeof(Callable),
 				typeof(SequenceDiagramHasComments),
 				typeof(SequenceDiagramHasClasses),
 				typeof(CommentReferencesSubjects),
 				typeof(ClassHasFlowElements),
-				typeof(Diagram),
+				typeof(FlowElementsCallCallables),
+				typeof(CallablesReturnResults),
+				typeof(SequencerDiagram),
 				typeof(CommentConnector),
-				typeof(FlowConnector),
+				typeof(CallConnector),
+				typeof(ResultConnector),
 				typeof(SwimLane),
 				typeof(MethodShape),
 				typeof(CommentBoxShape),
@@ -93,6 +95,7 @@ namespace Sawczyn.Sequencer
 				typeof(EndShape),
 				typeof(StartShape),
 				typeof(global::Sawczyn.Sequencer.FixUpDiagram),
+				typeof(global::Sawczyn.Sequencer.DecoratorPropertyChanged),
 				typeof(global::Sawczyn.Sequencer.ConnectorRolePlayerChanged),
 			};
 		}
@@ -105,12 +108,16 @@ namespace Sawczyn.Sequencer
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
-				new DomainMemberInfo(typeof(NamedElement), "Description", NamedElement.DescriptionDomainPropertyId, typeof(NamedElement.DescriptionPropertyHandler)),
+				new DomainMemberInfo(typeof(Method), "Name", Method.NameDomainPropertyId, typeof(Method.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(Method), "IsStatic", Method.IsStaticDomainPropertyId, typeof(Method.IsStaticPropertyHandler)),
-				new DomainMemberInfo(typeof(Branch), "Condition", Branch.ConditionDomainPropertyId, typeof(Branch.ConditionPropertyHandler)),
 				new DomainMemberInfo(typeof(Comment), "Text", Comment.TextDomainPropertyId, typeof(Comment.TextPropertyHandler)),
-				new DomainMemberInfo(typeof(Flow), "Guard", Flow.GuardDomainPropertyId, typeof(Flow.GuardPropertyHandler)),
+				new DomainMemberInfo(typeof(Class), "Name", Class.NameDomainPropertyId, typeof(Class.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Class), "Assembly", Class.AssemblyDomainPropertyId, typeof(Class.AssemblyPropertyHandler)),
+				new DomainMemberInfo(typeof(Callable), "ReturnType", Callable.ReturnTypeDomainPropertyId, typeof(Callable.ReturnTypePropertyHandler)),
+				new DomainMemberInfo(typeof(Callable), "Condition", Callable.ConditionDomainPropertyId, typeof(Callable.ConditionPropertyHandler)),
+				new DomainMemberInfo(typeof(FlowElementsCallCallables), "IsAsync", FlowElementsCallCallables.IsAsyncDomainPropertyId, typeof(FlowElementsCallCallables.IsAsyncPropertyHandler)),
+				new DomainMemberInfo(typeof(SequencerDiagram), "FillColor", SequencerDiagram.FillColorDomainPropertyId, typeof(SequencerDiagram.FillColorPropertyHandler)),
+				new DomainMemberInfo(typeof(MethodShape), "FillColor", MethodShape.FillColorDomainPropertyId, typeof(MethodShape.FillColorPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -121,8 +128,6 @@ namespace Sawczyn.Sequencer
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(Flow), "FlowFrom", Flow.FlowFromDomainRoleId),
-				new DomainRolePlayerInfo(typeof(Flow), "FlowTo", Flow.FlowToDomainRoleId),
 				new DomainRolePlayerInfo(typeof(SequenceDiagramHasComments), "SequenceDiagram", SequenceDiagramHasComments.SequenceDiagramDomainRoleId),
 				new DomainRolePlayerInfo(typeof(SequenceDiagramHasComments), "Comment", SequenceDiagramHasComments.CommentDomainRoleId),
 				new DomainRolePlayerInfo(typeof(SequenceDiagramHasClasses), "SequenceDiagram", SequenceDiagramHasClasses.SequenceDiagramDomainRoleId),
@@ -131,6 +136,10 @@ namespace Sawczyn.Sequencer
 				new DomainRolePlayerInfo(typeof(CommentReferencesSubjects), "Subject", CommentReferencesSubjects.SubjectDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClassHasFlowElements), "Class", ClassHasFlowElements.ClassDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ClassHasFlowElements), "FlowElement", ClassHasFlowElements.FlowElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FlowElementsCallCallables), "FlowElement", FlowElementsCallCallables.FlowElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FlowElementsCallCallables), "Callable", FlowElementsCallCallables.CallableDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CallablesReturnResults), "SourceCallable", CallablesReturnResults.SourceCallableDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CallablesReturnResults), "TargetCallable", CallablesReturnResults.TargetCallableDomainRoleId),
 			};
 		}
 		#endregion
@@ -152,7 +161,7 @@ namespace Sawczyn.Sequencer
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(20);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(21);
 				createElementMap.Add(typeof(SequenceDiagram), 0);
 				createElementMap.Add(typeof(Method), 1);
 				createElementMap.Add(typeof(StartPoint), 2);
@@ -161,16 +170,17 @@ namespace Sawczyn.Sequencer
 				createElementMap.Add(typeof(Synchronization), 5);
 				createElementMap.Add(typeof(Comment), 6);
 				createElementMap.Add(typeof(Class), 7);
-				createElementMap.Add(typeof(Diagram), 8);
+				createElementMap.Add(typeof(SequencerDiagram), 8);
 				createElementMap.Add(typeof(CommentConnector), 9);
-				createElementMap.Add(typeof(FlowConnector), 10);
-				createElementMap.Add(typeof(SwimLane), 11);
-				createElementMap.Add(typeof(MethodShape), 12);
-				createElementMap.Add(typeof(CommentBoxShape), 13);
-				createElementMap.Add(typeof(SyncBarShape), 14);
-				createElementMap.Add(typeof(BranchShape), 15);
-				createElementMap.Add(typeof(EndShape), 16);
-				createElementMap.Add(typeof(StartShape), 17);
+				createElementMap.Add(typeof(CallConnector), 10);
+				createElementMap.Add(typeof(ResultConnector), 11);
+				createElementMap.Add(typeof(SwimLane), 12);
+				createElementMap.Add(typeof(MethodShape), 13);
+				createElementMap.Add(typeof(CommentBoxShape), 14);
+				createElementMap.Add(typeof(SyncBarShape), 15);
+				createElementMap.Add(typeof(BranchShape), 16);
+				createElementMap.Add(typeof(EndShape), 17);
+				createElementMap.Add(typeof(StartShape), 18);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -192,16 +202,17 @@ namespace Sawczyn.Sequencer
 				case 5: return new Synchronization(partition, propertyAssignments);
 				case 6: return new Comment(partition, propertyAssignments);
 				case 7: return new Class(partition, propertyAssignments);
-				case 8: return new Diagram(partition, propertyAssignments);
+				case 8: return new SequencerDiagram(partition, propertyAssignments);
 				case 9: return new CommentConnector(partition, propertyAssignments);
-				case 10: return new FlowConnector(partition, propertyAssignments);
-				case 11: return new SwimLane(partition, propertyAssignments);
-				case 12: return new MethodShape(partition, propertyAssignments);
-				case 13: return new CommentBoxShape(partition, propertyAssignments);
-				case 14: return new SyncBarShape(partition, propertyAssignments);
-				case 15: return new BranchShape(partition, propertyAssignments);
-				case 16: return new EndShape(partition, propertyAssignments);
-				case 17: return new StartShape(partition, propertyAssignments);
+				case 10: return new CallConnector(partition, propertyAssignments);
+				case 11: return new ResultConnector(partition, propertyAssignments);
+				case 12: return new SwimLane(partition, propertyAssignments);
+				case 13: return new MethodShape(partition, propertyAssignments);
+				case 14: return new CommentBoxShape(partition, propertyAssignments);
+				case 15: return new SyncBarShape(partition, propertyAssignments);
+				case 16: return new BranchShape(partition, propertyAssignments);
+				case 17: return new EndShape(partition, propertyAssignments);
+				case 18: return new StartShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -224,12 +235,13 @@ namespace Sawczyn.Sequencer
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
-				createElementLinkMap.Add(typeof(Flow), 0);
-				createElementLinkMap.Add(typeof(SequenceDiagramHasComments), 1);
-				createElementLinkMap.Add(typeof(SequenceDiagramHasClasses), 2);
-				createElementLinkMap.Add(typeof(CommentReferencesSubjects), 3);
-				createElementLinkMap.Add(typeof(ClassHasFlowElements), 4);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(6);
+				createElementLinkMap.Add(typeof(SequenceDiagramHasComments), 0);
+				createElementLinkMap.Add(typeof(SequenceDiagramHasClasses), 1);
+				createElementLinkMap.Add(typeof(CommentReferencesSubjects), 2);
+				createElementLinkMap.Add(typeof(ClassHasFlowElements), 3);
+				createElementLinkMap.Add(typeof(FlowElementsCallCallables), 4);
+				createElementLinkMap.Add(typeof(CallablesReturnResults), 5);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -244,11 +256,12 @@ namespace Sawczyn.Sequencer
 			}
 			switch (index)
 			{
-				case 0: return new Flow(partition, roleAssignments, propertyAssignments);
-				case 1: return new SequenceDiagramHasComments(partition, roleAssignments, propertyAssignments);
-				case 2: return new SequenceDiagramHasClasses(partition, roleAssignments, propertyAssignments);
-				case 3: return new CommentReferencesSubjects(partition, roleAssignments, propertyAssignments);
-				case 4: return new ClassHasFlowElements(partition, roleAssignments, propertyAssignments);
+				case 0: return new SequenceDiagramHasComments(partition, roleAssignments, propertyAssignments);
+				case 1: return new SequenceDiagramHasClasses(partition, roleAssignments, propertyAssignments);
+				case 2: return new CommentReferencesSubjects(partition, roleAssignments, propertyAssignments);
+				case 3: return new ClassHasFlowElements(partition, roleAssignments, propertyAssignments);
+				case 4: return new FlowElementsCallCallables(partition, roleAssignments, propertyAssignments);
+				case 5: return new CallablesReturnResults(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -260,7 +273,7 @@ namespace Sawczyn.Sequencer
 		/// <summary>
 		/// The base name of this model's resources.
 		/// </summary>
-		public const string ResourceBaseName = "Company.Sequencer.GeneratedCode.DomainModelResx";
+		public const string ResourceBaseName = "Sawczyn.Sequencer.GeneratedCode.DomainModelResx";
 		
 		/// <summary>
 		/// Gets the DomainModel's ResourceManager. If the ResourceManager does not already exist, then it is created.
@@ -369,6 +382,7 @@ namespace Sawczyn.Sequencer
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::Sawczyn.Sequencer.FixUpDiagram));
+			ruleManager.EnableRule(typeof(global::Sawczyn.Sequencer.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::Sawczyn.Sequencer.ConnectorRolePlayerChanged));
 		}
 		
@@ -381,6 +395,7 @@ namespace Sawczyn.Sequencer
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::Sawczyn.Sequencer.FixUpDiagram));
+			ruleManager.DisableRule(typeof(global::Sawczyn.Sequencer.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::Sawczyn.Sequencer.ConnectorRolePlayerChanged));
 		}
 		#endregion
@@ -506,13 +521,13 @@ namespace Sawczyn.Sequencer
 		/// Regular
 		/// Description for Sawczyn.Sequencer.TaskSort.Regular
 		/// </summary>
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.TaskSort/Regular.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.TaskSort/Regular.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		Regular = 0,
 		/// <summary>
 		/// SuperTask
 		/// Description for Sawczyn.Sequencer.TaskSort.SuperTask
 		/// </summary>
-		[DslDesign::DescriptionResource("Sawczyn.Sequencer.TaskSort/SuperTask.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Company.Sequencer.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Sawczyn.Sequencer.TaskSort/SuperTask.Description", typeof(global::Sawczyn.Sequencer.SequencerDomainModel), "Sawczyn.Sequencer.GeneratedCode.DomainModelResx")]
 		SuperTask = 1,
 	}
 }

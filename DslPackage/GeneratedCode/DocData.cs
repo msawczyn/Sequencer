@@ -423,7 +423,7 @@ namespace Sawczyn.Sequencer
 			global::System.Collections.Generic.IList<DslDiagrams::PresentationElement> diagrams = DslDiagrams::PresentationViewsSubject.GetPresentation(this.RootElement);
 			if (diagrams.Count > 0 && (!saveAs || this.diagramDocumentLockHolder == null))
 			{
-				global::Sawczyn.Sequencer.Diagram diagram = diagrams[0] as global::Sawczyn.Sequencer.Diagram;
+				global::Sawczyn.Sequencer.SequencerDiagram diagram = diagrams[0] as global::Sawczyn.Sequencer.SequencerDiagram;
 				if (diagram != null)
 				{
 					string diagramFileName = fileName + this.DiagramExtension;
@@ -495,7 +495,7 @@ namespace Sawczyn.Sequencer
 			global::System.Collections.Generic.IList<DslDiagrams::PresentationElement> diagrams = DslDiagrams::PresentationViewsSubject.GetPresentation(this.RootElement);
 			if (diagrams.Count > 0)
 			{
-				global::Sawczyn.Sequencer.Diagram diagram = diagrams[0] as global::Sawczyn.Sequencer.Diagram;
+				global::Sawczyn.Sequencer.SequencerDiagram diagram = diagrams[0] as global::Sawczyn.Sequencer.SequencerDiagram;
 				if (diagram != null)
 				{
 					try

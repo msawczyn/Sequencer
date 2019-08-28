@@ -15,7 +15,7 @@
       <Parent guid="guidCmdSet" id="menuidContext" />
       <CommandFlag>AlwaysCreate</CommandFlag>
       <Strings>
-        <CanonicalName>Sequence Diagram Designer Context Menu</CanonicalName>
+        <CanonicalName>Task Flow Designer Context Menu</CanonicalName>
         <ButtonText>Sequencer Context</ButtonText>
       </Strings>
     </Menu>
@@ -23,7 +23,7 @@
       <Parent guid="guidCmdSet" id="menuidExplorer" />
       <CommandFlag>AlwaysCreate</CommandFlag>
       <Strings>
-        <CanonicalName>Sequence Diagram Explorer Context Menu</CanonicalName>
+        <CanonicalName>Task Flow Explorer Context Menu</CanonicalName>
         <ButtonText>Sequencer Explorer</ButtonText>
       </Strings>
     </Menu>
@@ -103,15 +103,15 @@
   <VisibilityItem guid="guidCmdSet" id="cmdidViewExplorer" context="guidEditor" />
 </VisibilityConstraints>
 <Symbols>
-  <GuidSymbol name="guidPkg" value="{f653928c-67e8-4bc5-a1e1-558ebc689013}" />
-  <GuidSymbol name="guidCmdSet" value="{e9717e6f-c7d1-426b-a17e-ca40eb3afcb4}" >
+  <GuidSymbol name="guidPkg" value="{8841b298-1d28-4f8c-8fbd-7142afbe253c}" />
+  <GuidSymbol name="guidCmdSet" value="{5330f887-6611-4adc-83ad-a977a7ce3032}" >
     <IDSymbol name="menuidContext" value="0x10000"/>
     <IDSymbol name="grpidContextMain" value="0x20000"/>
     <IDSymbol name="grpidExplorerCopyPaste" value="0x30000"/>
     <IDSymbol name="menuidExplorer" value="0x10001"/>
     <IDSymbol name="cmdidViewExplorer" value="0x0001"/>
   </GuidSymbol>
-  <GuidSymbol name="guidEditor" value="{f293475e-75f9-456c-b012-d2274e3d4b87}" />
+  <GuidSymbol name="guidEditor" value="{a32e65c7-c29a-4411-83e5-7124bfb09c39}" />
 </Symbols>
 </CommandTable>
 

@@ -637,13 +637,13 @@ namespace Sawczyn.Sequencer
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized Diagram instance.</returns>
+		/// <returns>In-memory stream containing the serialized SequencerDiagram instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, SequencerDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -683,7 +683,7 @@ namespace Sawczyn.Sequencer
 		/// </summary>
 		/// <param name="store">The new SequenceDiagram instance will be created into the default partition of this store.</param>
 		/// <param name="modelFileName">Name of the file from which the SequenceDiagram instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the Diagram instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the SequencerDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -707,7 +707,7 @@ namespace Sawczyn.Sequencer
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
 		/// <param name="store">The new SequenceDiagram instance will be created into the default partition of this store.</param>
 		/// <param name="modelFileName">Name of the file from which the SequenceDiagram instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the Diagram instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the SequencerDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -737,8 +737,8 @@ namespace Sawczyn.Sequencer
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
 		/// <param name="modelPartition">Partition in which the new SequenceDiagram instance will be created.</param>
 		/// <param name="modelFileName">Name of the file from which the SequenceDiagram instance will be deserialized.</param>
-		/// <param name="diagramPartition">Partition in which the new Diagram instance will be created.</param>
-		/// <param name="diagramFileName">Name of the file from which the Diagram instance will be deserialized.</param>
+		/// <param name="diagramPartition">Partition in which the new SequencerDiagram instance will be created.</param>
+		/// <param name="diagramFileName">Name of the file from which the SequencerDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -781,10 +781,10 @@ namespace Sawczyn.Sequencer
 				return modelRoot;
 			}
 	
-			Diagram diagram = null;
+			SequencerDiagram diagram = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(diagramPartition.Store);
-			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(Diagram.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for Diagram");
+			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(SequencerDiagram.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for SequencerDiagram");
 			if (diagramSerializer != null)
 			{
 				if(!global::System.IO.File.Exists(diagramFileName))
@@ -813,7 +813,7 @@ namespace Sawczyn.Sequencer
 									using (global::System.Xml.XmlReader reader = global::System.Xml.XmlReader.Create(fileStream, settings))
 									{
 										reader.MoveToContent();
-										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as Diagram;
+										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as SequencerDiagram;
 										if (diagram != null)
 										{
 											this.ReadRootElement(serializationContext, diagram, reader, schemaResolver);
@@ -875,11 +875,11 @@ namespace Sawczyn.Sequencer
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new Diagram.
+		/// Helper method to create and initialize a new SequencerDiagram.
 		/// </summary>
-		internal protected virtual Diagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
+		internal protected virtual SequencerDiagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
 		{
-			Diagram diagram = new Diagram(diagramPartition);
+			SequencerDiagram diagram = new SequencerDiagram(diagramPartition);
 	
 			// If model root has not children, create initial elements mapped to swimlanes, and merge them into the root.
 			if (DslModeling::DomainRoleInfo.GetAllElementLinks(modelRoot).Count == 0)
@@ -924,9 +924,9 @@ namespace Sawczyn.Sequencer
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">SequenceDiagram instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, Diagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, SequencerDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -937,26 +937,26 @@ namespace Sawczyn.Sequencer
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">SequenceDiagram instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, Diagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, SequencerDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given SequenceDiagram and Diagram to the given files, with specified encoding.
+		/// Saves the given SequenceDiagram and SequencerDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
 		/// <param name="modelRoot">SequenceDiagram instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, SequenceDiagram modelRoot, string modelFileName, SequencerDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1013,9 +1013,9 @@ namespace Sawczyn.Sequencer
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, Diagram diagram, string diagramFileName)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, SequencerDiagram diagram, string diagramFileName)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -1024,24 +1024,24 @@ namespace Sawczyn.Sequencer
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, Diagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, SequencerDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given Diagram to the given file, with specified encoding.
+		/// Saves the given SequencerDiagram to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">Diagram to be saved.</param>
+		/// <param name="diagram">SequencerDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, SequencerDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1146,7 +1146,7 @@ namespace Sawczyn.Sequencer
 				// Only model has schema, diagram has no schema.
 				rootElementSettings.SchemaTargetNamespace = "http://schemas.microsoft.com/dsltools/Sequencer";
 			}
-			rootElementSettings.Version = new global::System.Version("0.1.0.0");
+			rootElementSettings.Version = new global::System.Version("1.0.0.0");
 	
 			// Carry out the normal serialization.
 			rootSerializer.Write(serializationContext, rootElement, writer, rootElementSettings);
@@ -1168,7 +1168,7 @@ namespace Sawczyn.Sequencer
 				throw new global::System.ArgumentNullException("reader");
 			#endregion
 	
-			global::System.Version expectedVersion = new global::System.Version("0.1.0.0");
+			global::System.Version expectedVersion = new global::System.Version("1.0.0.0");
 			string dslVersionStr = reader.GetAttribute("dslVersion");
 			if (dslVersionStr != null)
 			{

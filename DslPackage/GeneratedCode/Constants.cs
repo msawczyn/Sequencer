@@ -18,7 +18,7 @@ namespace Sawczyn.Sequencer
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
 		public const string CompanyName = @"Sawczyn";
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-		public const string ProductVersion = "0.1.0.0";
+		public const string ProductVersion = "1.0.0.0";
 
 		// Menu definitions
 		public static readonly global::System.ComponentModel.Design.CommandID SequencerDiagramMenu = new global::System.ComponentModel.Design.CommandID(new global::System.Guid(SequencerCommandSetId), 0x10000);
@@ -28,15 +28,15 @@ namespace Sawczyn.Sequencer
 		public static readonly global::System.ComponentModel.Design.CommandID ViewSequencerExplorerCommand = new global::System.ComponentModel.Design.CommandID(new global::System.Guid(SequencerCommandSetId), 0x0001);
 	
 		// Package identifier
-		public const string SequencerPackageId = "f653928c-67e8-4bc5-a1e1-558ebc689013";
+		public const string SequencerPackageId = "8841b298-1d28-4f8c-8fbd-7142afbe253c";
 		
 		// Editor factory identifier
-		public const string SequencerEditorFactoryId = "f293475e-75f9-456c-b012-d2274e3d4b87";
+		public const string SequencerEditorFactoryId = "a32e65c7-c29a-4411-83e5-7124bfb09c39";
 		
 		public const string DefaultDiagramExtension = ".diagram";
 		
 		// Model explorer tool window identifier
-		public const string SequencerModelExplorerToolWindowId = "90838454-181a-432c-9005-d15b9a32a72c";
+		public const string SequencerModelExplorerToolWindowId = "f7477cf3-6f23-4b76-a884-304a3d08c9fe";
 	}
 }
 //
@@ -47,6 +47,6 @@ namespace Sawczyn.Sequencer
 	internal static partial class Constants
 	{
 		// Menu identifier
-		public const string SequencerCommandSetId = "e9717e6f-c7d1-426b-a17e-ca40eb3afcb4";
+		public const string SequencerCommandSetId = "5330f887-6611-4adc-83ad-a977a7ce3032";
 	}
 }

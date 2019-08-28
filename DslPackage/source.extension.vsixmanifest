@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="f653928c-67e8-4bc5-a1e1-558ebc689013" Version="0.1.0.0" Language="en-US" Publisher="Sawczyn" />
-    <DisplayName>Sequence Diagram</DisplayName>
-    <Description>Sequence diagram representing a high level method call flow</Description>
+    <Identity Id="8841b298-1d28-4f8c-8fbd-7142afbe253c" Version="1.0.0.0" Language="en-US" Publisher="Sawczyn" />
+    <DisplayName>Task Flow</DisplayName>
+    <Description>Description for Sawczyn.Sequencer.Sequencer</Description>
   </Metadata>
   <Installation InstalledByMsi="false">
     <InstallationTarget Version="[15.0]" Id="Microsoft.VisualStudio.Community" />

@@ -46,15 +46,15 @@ namespace Sawczyn.Sequencer
 		/// See the MSDN documentation for the ToolboxItemFilterAttribute class for more information on toolbox
 		/// item filters.
 		/// </remarks>
-		public const string ToolboxFilterString = "Sequencer.0.1";
+		public const string ToolboxFilterString = "Sequencer.1.0";
 		/// <summary>
-		/// Toolbox item filter string used to identify MethodCall connector tool.
+		/// Toolbox item filter string used to identify Flow connector tool.
 		/// </summary>
-		public const string MethodCallFilterString = "MethodCall.0.1";
+		public const string FlowFilterString = "Flow.1.0";
 		/// <summary>
-		/// Toolbox item filter string used to identify CommentConnector connector tool.
+		/// Toolbox item filter string used to identify CommentSubjects connector tool.
 		/// </summary>
-		public const string CommentConnectorFilterString = "CommentConnector.0.1";
+		public const string CommentSubjectsFilterString = "CommentSubjects.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -231,22 +231,22 @@ namespace Sawczyn.Sequencer
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Sawczyn.Sequencer.MethodCallToolboxItem":
+				case "Sawczyn.Sequencer.FlowToolboxItem":
 
-					// Add MethodCall connector tool.
+					// Add Flow connector tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Sawczyn.Sequencer.MethodCallToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Sawczyn.Sequencer.FlowToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						6, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("MethodCallToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("MethodCallToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						resourceManager.GetString("FlowToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FlowToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"Sawczyn.Sequencer.SequencerToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("SequencerToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ConnectFlowF1Keyword", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("MethodCallToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						resourceManager.GetString("FlowToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						null, // Connector toolbox items do not have an underlying data object.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
-							new global::System.ComponentModel.ToolboxItemFilterAttribute(MethodCallFilterString)
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(FlowFilterString)
 						});
 					break;
 				case "Sawczyn.Sequencer.CommentToolboxItem":
@@ -265,22 +265,22 @@ namespace Sawczyn.Sequencer
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Sawczyn.Sequencer.CommentConnectorToolboxItem":
+				case "Sawczyn.Sequencer.CommentSubjectsToolboxItem":
 
-					// Add CommentConnector connector tool.
+					// Add CommentSubjects connector tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Sawczyn.Sequencer.CommentConnectorToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Sawczyn.Sequencer.CommentSubjectsToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						8, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("CommentConnectorToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CommentConnectorToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						resourceManager.GetString("CommentSubjectsToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CommentSubjectsToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"Sawczyn.Sequencer.SequencerToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("SequencerToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"ConnectCommentSubjectsF1Keyword", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("CommentConnectorToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						resourceManager.GetString("CommentSubjectsToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						null, // Connector toolbox items do not have an underlying data object.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
-							new global::System.ComponentModel.ToolboxItemFilterAttribute(CommentConnectorFilterString)
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(CommentSubjectsFilterString)
 						});
 					break;
 				case "Sawczyn.Sequencer.ClassToolboxItem":

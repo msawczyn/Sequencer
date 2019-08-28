@@ -16,7 +16,7 @@ using System.Runtime.ConstrainedExecution;
 [assembly: AssemblyTitle(@"")]
 [assembly: AssemblyDescription(@"")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(@"Company")]
+[assembly: AssemblyCompany(@"Sawczyn")]
 [assembly: AssemblyProduct(@"Sequencer")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

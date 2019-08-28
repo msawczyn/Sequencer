@@ -58,7 +58,7 @@ namespace Sawczyn.Sequencer
 			DslModeling::Partition diagramPartition = docData.GetDiagramPartition();
 			if (diagramPartition != null)
 			{
-				global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.Diagram> diagrams = docData.GetDiagramPartition().ElementDirectory.FindElements<global::Sawczyn.Sequencer.Diagram>();
+				global::System.Collections.ObjectModel.ReadOnlyCollection<global::Sawczyn.Sequencer.SequencerDiagram> diagrams = docData.GetDiagramPartition().ElementDirectory.FindElements<global::Sawczyn.Sequencer.SequencerDiagram>();
 				if (diagrams.Count > 0)
 				{
 					global::System.Diagnostics.Debug.Assert(diagrams.Count == 1, "Found more than one diagram, using the first one found.");

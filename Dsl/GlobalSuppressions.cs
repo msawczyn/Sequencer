@@ -8,4 +8,4 @@
 // Suppression File". You do not need to add suppressions to this
 // file manually.
 
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1703:ResourceStringsShouldBeSpelledCorrectly", MessageId = "sqc", Scope = "resource", Target = "Company.Sequencer.GeneratedCode.DomainModelResx.resources", Justification="'sqc' is a file extension")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1703:ResourceStringsShouldBeSpelledCorrectly", MessageId = "sqc", Scope = "resource", Target = "Sawczyn.Sequencer.GeneratedCode.DomainModelResx.resources", Justification="'sqc' is a file extension")]
