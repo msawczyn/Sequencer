@@ -1,0 +1,22 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".txt" #>
+<#@ Sequencer processor="SequencerDirectiveProcessor" requires="fileName='Sample.sqc'" #>
+
+Generated material. Generating code in C#.
+
+
+<#
+	foreach (Actor eachActor in this.FlowGraph.Actors)
+	{
+#>
+		<#= eachActor.Name #>
+<#
+	
+		foreach (FlowElement eacheElement in eachActor.FlowElements)
+		{
+#>
+			<#= eacheElement.Name #>
+<#
+		}
+	}
+#>

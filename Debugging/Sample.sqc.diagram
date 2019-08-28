@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sequencerDiagram dslVersion="1.0.0.0" Id="610a478e-c493-4dab-904f-4e15a7ad0340" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <flowGraphMoniker name="/" />
+  <nestedChildShapes>
+    <actorSwimLane Id="04b01e35-a8fd-4ee8-bfd8-cff330b53ca2" absoluteBounds="0, 0, 3.375, 8.5">
+      <actorMoniker name="//Actor1" />
+      <nestedChildShapes>
+        <startShape Id="b5e01fae-e104-4217-99da-d58599806449" absoluteBounds="0.5, 0.5, 0.25, 0.25">
+          <startPointMoniker name="//Actor1/StartPoint1" />
+        </startShape>
+        <taskShape Id="f9e39d0f-8d8c-41aa-971c-bfb2bb3a6384" absoluteBounds="1.25, 0.875, 1.25, 0.375">
+          <taskMoniker name="//Actor1/Task1" />
+        </taskShape>
+        <mergeBranchShape Id="6a390e5e-4dcf-4089-8693-63ebee663aed" absoluteBounds="1.625, 1.625, 0.5, 0.3">
+          <mergeBranchMoniker name="//Actor1/MergeBranch1" />
+        </mergeBranchShape>
+        <taskShape Id="111fb503-d5f8-424f-a606-564d8e3ff4c9" absoluteBounds="1.25, 3.125, 1.25, 0.375">
+          <taskMoniker name="//Actor1/Task2" />
+        </taskShape>
+        <syncBarShape Id="4f92280b-1a94-41d5-820d-87f446f83e20" absoluteBounds="2.125, 4.75, 1, 0.125">
+          <synchronizationMoniker name="//Actor1/Synchronization1" />
+        </syncBarShape>
+        <flowConnector Id="c9ded79e-d32a-4218-8a39-1d212fd71009" edgePoints="[(0.75 : 0.625); (1.875 : 0.625); (1.875 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="5612281f-6eff-4b10-85d6-abcffa4f50e9" />
+          <relativeChildShapes />
+          <nodes>
+            <startShapeMoniker Id="b5e01fae-e104-4217-99da-d58599806449" />
+            <taskShapeMoniker Id="f9e39d0f-8d8c-41aa-971c-bfb2bb3a6384" />
+          </nodes>
+        </flowConnector>
+        <flowConnector Id="94e1b72a-14b6-44ae-a79e-14355caea7c0" edgePoints="[(1.875 : 1.25); (1.875 : 1.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="026483b7-2201-4657-b034-67d1870be953" />
+          <relativeChildShapes />
+          <nodes>
+            <taskShapeMoniker Id="f9e39d0f-8d8c-41aa-971c-bfb2bb3a6384" />
+            <mergeBranchShapeMoniker Id="6a390e5e-4dcf-4089-8693-63ebee663aed" />
+          </nodes>
+        </flowConnector>
+        <flowConnector Id="6113d064-79bf-407e-91eb-4287916e8580" edgePoints="[(1.875 : 1.925); (1.875 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="0313fde0-4d78-4c94-b04a-235eec0e9eec" />
+          <relativeChildShapes />
+          <nodes>
+            <mergeBranchShapeMoniker Id="6a390e5e-4dcf-4089-8693-63ebee663aed" />
+            <taskShapeMoniker Id="111fb503-d5f8-424f-a606-564d8e3ff4c9" />
+          </nodes>
+        </flowConnector>
+        <flowConnector Id="02327ee9-e2f2-45d1-8100-fb849d898de7" edgePoints="[(2.3125 : 3.5); (2.3125 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="1c37db9e-c048-493e-bf4f-5005ee83d8d6" />
+          <relativeChildShapes />
+          <nodes>
+            <taskShapeMoniker Id="111fb503-d5f8-424f-a606-564d8e3ff4c9" />
+            <syncBarShapeMoniker Id="4f92280b-1a94-41d5-820d-87f446f83e20" />
+          </nodes>
+        </flowConnector>
+        <endShape Id="09e44b55-7472-486e-9658-ed09d6b8bd6c" absoluteBounds="2.5, 5.375, 0.25, 0.25">
+          <endpointMoniker name="//Actor1/EndPoint1" />
+        </endShape>
+        <flowConnector Id="03f28a2f-c49d-4cef-8555-a35e33ce0031" edgePoints="[(2.625 : 4.875); (2.625 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <flowMoniker Id="a5724bc0-f3d9-4fb1-a323-1a34e1337327" />
+          <relativeChildShapes />
+          <nodes>
+            <syncBarShapeMoniker Id="4f92280b-1a94-41d5-820d-87f446f83e20" />
+            <endShapeMoniker Id="09e44b55-7472-486e-9658-ed09d6b8bd6c" />
+          </nodes>
+        </flowConnector>
+      </nestedChildShapes>
+    </actorSwimLane>
+    <actorSwimLane Id="27884e67-1001-4a91-83b8-c837821ac91e" absoluteBounds="3.375, 0, 1.875, 8.5">
+      <actorMoniker name="//Actor2" />
+      <nestedChildShapes>
+        <taskShape Id="c81d3141-d777-4a48-962b-c76016c64b1e" absoluteBounds="3.625, 2.125, 1.25, 0.375">
+          <taskMoniker name="//Actor2/Task1" />
+        </taskShape>
+      </nestedChildShapes>
+    </actorSwimLane>
+    <actorSwimLane Id="6d75af2d-414b-485f-879e-b704b7bace1e" absoluteBounds="5.25, 0, 5.75, 8.5">
+      <actorMoniker name="//Actor3" />
+    </actorSwimLane>
+    <commentBoxShape Id="e8db73c8-2e35-4b50-ae7b-423c8fe63eb8" absoluteBounds="5, 3.25, 1.5, 0.25">
+      <commentMoniker Id="50d80f91-fcac-4972-8706-858ad20dfc6f" />
+    </commentBoxShape>
+    <commentConnector Id="ed3fe0ef-4158-49f9-921e-9b5fee17e2de" edgePoints="[(5 : 3.25); (4.875 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="23aa51a6-029f-465b-a4fd-23b480099b84">
+      <nodes>
+        <commentBoxShapeMoniker Id="e8db73c8-2e35-4b50-ae7b-423c8fe63eb8" />
+        <taskShapeMoniker Id="c81d3141-d777-4a48-962b-c76016c64b1e" />
+      </nodes>
+    </commentConnector>
+    <flowConnector Id="34591992-ece8-43e9-b756-bb6e1174a99a" edgePoints="[(2.125 : 1.775); (4.25 : 1.775); (4.25 : 2.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <flowMoniker Id="ed39f42c-eb44-4522-aa38-25afb2a78e15" />
+      <relativeChildShapes />
+      <nodes>
+        <mergeBranchShapeMoniker Id="6a390e5e-4dcf-4089-8693-63ebee663aed" />
+        <taskShapeMoniker Id="c81d3141-d777-4a48-962b-c76016c64b1e" />
+      </nodes>
+    </flowConnector>
+    <flowConnector Id="aeda7018-fa61-452d-b420-0cb580433e63" edgePoints="[(3.625 : 2.27403846153846); (2.84375 : 2.27403846153846); (2.84375 : 4.75)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <flowMoniker Id="5f64d759-534e-4aeb-90e9-fed78f03dd10" />
+      <relativeChildShapes />
+      <nodes>
+        <taskShapeMoniker Id="c81d3141-d777-4a48-962b-c76016c64b1e" />
+        <syncBarShapeMoniker Id="4f92280b-1a94-41d5-820d-87f446f83e20" />
+      </nodes>
+    </flowConnector>
+  </nestedChildShapes>
+</sequencerDiagram>

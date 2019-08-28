@@ -1,0 +1,14 @@
+﻿
+Generated material. Generating code in VB.
+
+
+		Actor1
+			StartPoint1
+			Task1
+			MergeBranch1
+			Task2
+			EndPoint1
+			Synchronization1
+		Actor2
+			Task1
+		Actor3

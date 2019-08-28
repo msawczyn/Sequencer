@@ -1,0 +1,20 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="VB"#>
+<#@ output extension=".txt" #>
+<#@ Sequencer processor="SequencerDirectiveProcessor" requires="fileName='Sample.sqc'" #>
+
+Generated material. Generating code in VB.
+
+
+<#
+	For Each eachActor As Actor In Me.FlowGraph.Actors
+#>
+		<#= eachActor.Name #>
+<#
+	
+		For Each eacheElement As FlowElement In eachActor.FlowElements
+#>
+			<#= eacheElement.Name #>
+<#
+		Next
+	Next
+#>
